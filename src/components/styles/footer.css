@@ -1,0 +1,43 @@
+.footer {
+    padding: 72px 0;
+    background-color: hsla(0, 0%, 92%, 0.3);
+}
+
+.footer .footer-content {
+    margin: 0 auto;
+    width: 90%;
+    border-top: 1px solid hsl(231, 41%, 47%);
+    padding-top: 12px;
+}
+
+.footer .logo { 
+    margin-top: 12px;
+    font-size: 14pt;
+}
+.footer .menu {
+    list-style: none;
+}
+
+.footer .menu .menu-item {
+    display: inline-block;
+    margin-right: 32px;
+}
+
+.footer .menu .menu-item .menu-link {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11pt;
+    padding-bottom: 6px;
+}
+
+.footer .menu .menu-item.home-item .menu-link .menu-icon {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    top: 1px;
+    margin-right: 6px;
+}
+
+@media screen and (min-width: 862px){
+
+}

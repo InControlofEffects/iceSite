@@ -1,0 +1,84 @@
+.hero {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    position: relative;
+    z-index: 0;
+    /* height is set in the component */
+    /* height: 70vh; */
+}
+
+.hero .hero-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.hero .hero-text {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+.hero .hero-title {
+    font-size: 44pt;
+    letter-spacing: 1px;   
+}
+
+.hero .hero-subtitle {
+    font-size: 21pt;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.hero .hero-description {
+    font-size: 16pt;
+    line-height: 1.4;
+    margin-top: 12px;
+}
+
+.hero .hero-photo-credit {
+    position: absolute;
+    right: 0;
+    padding: 6px 12px;
+    font-size: 8pt;
+    z-index: 2;
+}
+
+.hero .hero-photo-credit.position-above {
+    bottom: 0;
+    right: 0;
+} 
+
+.hero .hero-photo-credit.position-below {
+    bottom: -24px;
+}
+
+@media screen and (min-width: 972px) {
+
+    .hero .hero-content {
+        max-width: 972px;
+        margin: 0 auto;
+    }
+}

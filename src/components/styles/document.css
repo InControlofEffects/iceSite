@@ -1,0 +1,172 @@
+.doc {
+    width: 100%;
+    padding: 32px 0;
+    margin: 0 auto;
+    counter-reset: questions;
+}
+
+.doc-header {
+    width: 90%;
+    margin: 0 auto;
+    padding: 18px 0;
+    background-color: transparent;
+}
+
+.doc-section {
+    margin: 0 auto;
+    padding: 18px 0;
+    background-color: transparent;
+    position: relative;
+}
+
+.normal-width {
+    width: 90%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-width h1, .full-width h2 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.doc-section .doc-section-title {
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: #3f454b;
+}
+
+.doc-section h2 {
+    margin-bottom: 24px;
+}
+
+.doc-section ul, .doc-section ol {
+    margin: 8px 0;
+    margin-left: 24px;
+}
+
+.doc-section ul li, .doc-section ol li {
+    margin: 0;
+}
+
+.doc-section hr {
+    border: none;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.faq-section {
+    display: block;
+    position: relative;
+    width: 80%;
+    border-radius: 6px;
+    padding: 32px 24px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    -webkit-box-shadow: 0 0 6px 0 hsl(0, 0%, 80%);
+    box-shadow: 0 0 6px 0 hsl(0, 0%, 80%);
+}
+
+.faq-section h3 {
+    width: 80%;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.faq-section h3::before {
+    content: counter(questions) ". ";
+    counter-increment: questions;
+}
+
+.faq-section br {
+    display: block;
+    width: 1px;
+    height: 12px;
+}
+
+.faq-section .expand-toggle {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    color: #3f454b;
+    cursor: pointer;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 0;
+    padding-top: 2px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.faq-section .expand-toggle .icon-chevron {
+    width: 15px;
+    height: 15px;
+}
+
+.faq-section .expand-toggle.rotated {
+    color: #3f454b;
+    background-color: transparent;
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.faq-section .expand-toggle:hover, 
+.faq-section .expand-toggle:focus, 
+.faq-section .expand-toggle.rotated:hover {
+    color: white;
+    background-color: #3f454b;
+}
+
+.faq-section .hidden-content {
+    width: 92%;
+    margin-left: 0;
+    margin-top: 16px;
+    overflow: hidden;
+    height: auto;
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition: transform 3s ease-out;
+    -o-transition: transform 3s ease-out;
+    transition: transform 3s ease-out;
+}
+
+.faq-section .hidden-content.showContent {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+}
+
+@media screen and (min-width: 972px) {
+    
+    .doc-header,
+    .doc-section.normal-width,
+    .full-width h1, .full-width h2 {
+        width: 70%;
+        max-width: 972px;
+        margin: 0 auto;
+    }
+
+    .full-width {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .faq-section .hidden-content {
+        margin-left: 32px;
+    }
+}

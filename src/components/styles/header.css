@@ -1,0 +1,246 @@
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 62px;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    z-index: 999;
+    background-color: white;
+    border-bottom: 1px solid #f1f1f1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* reset styles for all elements used in navbar */
+.navbar ul, li, a, img {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+/* set branding element + logo */
+.navbar .logo {
+    margin: 0 8px;
+    margin-left: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+/* navlinks for mobile */
+.navbar .navlinks {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    padding: 16px 28px;
+    background-color: inherit;
+    z-index: 0;
+}
+
+/* styles <li> + <a> */
+.navbar .navlinks .menu-item {
+    margin-bottom: 24px;
+}
+
+.navbar .navlinks .menu-item .menu-link {
+    color: #252525;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+    font-size: 11pt;
+}
+
+.navbar .navlinks .home-item .icon-home {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    margin-right: 4px;
+}
+
+/* define selected style for <a> */
+.navbar .navlinks .menu-item .menu-link.selected {
+    color: hsl(231, 41%, 47%);
+    border-bottom-color: hsl(231, 41%, 47%);
+}
+
+/* styles for when menu is expanded */
+.navbar .navlinks.expanded {
+    width: 100%;
+    height: 100vh;
+    clip: auto;
+    padding: 0;
+    padding-top: 82px;
+}
+
+.navbar .navlinks.expanded .menu-item {
+    text-align: center;
+    padding: 0;
+}
+
+.navbar .navlinks.expanded .menu-item .menu-link {
+    font-size: 18pt;
+    color: hsl(231, 41%, 47%);
+}
+
+
+/* define styles for menu buttons */
+.navbar .menubtns {
+    position: absolute;
+    right: 25px;
+    width: 30px;
+}
+
+.navbar .menubtns .menu-item {
+    width: 25px;
+    display: inline-flex;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    color: #3f454b;
+}
+
+.navbar .menubtns .menu-item .menu-link {
+    padding: 0;
+    margin: 0;
+}
+
+#toggle {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    z-index: 110;
+}
+
+#toggle:hover,
+#toggle:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#toggle .menu-icon {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#toggle .menu-bar {
+    display: block;
+    height: 2px;
+    width: 20px;
+    margin-bottom: 4px;
+    background-color: hsl(231, 41%, 47%);
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#toggle .menu-bar.hidden {
+    opacity: 0;
+}
+
+#toggle .menu-bar.topBar {
+    width: 18px;
+    background-color: #e64626;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: center 0.5px;
+    -ms-transform-origin: center 0.5px;
+    transform-origin: center 0.5px;
+}
+
+#toggle .menu-bar.bottomBar {
+    width: 18px;
+    background-color: #e64626;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 15.85px -1.25px;
+    -ms-transform-origin: 15.85px -1.25px;
+    transform-origin: 15.85px -1.25px;
+}
+
+.navbar.navbar-transparent {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.navbar.navbar-transparent .logo, 
+.navbar.navbar-transparent .navlinks .menu-item .menu-link {
+    color: white;
+}
+
+.navbar.navbar-transparent .navlinks .menu-item .menu-link:hover, 
+.navbar.navbar-transparent .navlinks .menu-item .menu-link:focus, 
+.navbar.navbar-transparent .navlinks .menu-item .menu-link.selected {
+    border-bottom-color: white;
+}
+
+.navbar.navbar-transparent .menu-item #toggle .menu-bar {
+    background-color: white;
+}
+
+@media screen and (min-width: 862px) {
+
+    .navbar {
+        height: 72px;
+    }
+
+    .navbar .navlinks {
+        width: auto;
+        position: static;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        height: 42px;
+    }
+
+    .navbar .navlinks .menu-item,
+    .navbar .menubtns .menu-item {
+        display: inline-block;
+        position: relative;
+        margin-right: 44px;
+    }
+
+    .navbar .navlinks .menu-item .menu-link,
+    .navbar .menubtns .menu-item .menu-link {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        color: hsl(231, 41%, 47%);
+        border-bottom: 2px solid transparent;
+    }
+
+    .navbar .navlinks .menu-item .menu-link:hover,
+    .navbar .navlinks .menu-item .menu-link:focus,
+    .navbar .menubtns .menu-item .menu-link:hover,
+    .navbar .menubtns .menu-item .menu-link:focus {
+        border-bottom-color: hsl(231, 41%, 47%);
+    }
+
+    .navbar .menubtns .menu-toggle #toggle {
+        display: none;
+    }
+}

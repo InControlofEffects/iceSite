@@ -1,0 +1,37 @@
+
+#welcomeHero .hero-filter{
+    background-color:  hsla(231, 57%, 21%, 0.12);   
+}
+
+#welcomeHero .hero-filter .hero-content .hero-title,
+#welcomeHero .hero-filter .hero-content .hero-subtitle,
+#welcomeHero .hero-filter .hero-content .hero-text {
+    color: white;
+}
+
+
+.howToFigures {
+    counter-reset: steps;
+}
+
+.howToFigures .image-box {
+    position: relative;
+}
+
+.howToFigures .image-box svg {
+    padding-top: 32px;
+}
+
+
+.howToFigures .image-box .image-caption {
+    position: relative;
+    margin-top: 32px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.howToFigures .image-box .image-description {
+    font-size: 14pt;
+    padding-bottom: 12px;
+    color: #3f454b;
+}
