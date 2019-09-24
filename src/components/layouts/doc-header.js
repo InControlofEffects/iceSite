@@ -29,7 +29,7 @@ const header = (props) => {
                             {props.title}
                         </h1>
                     )
-                    : console.error("Header component is used, but no title was supplied. Set with 'title=...'")
+                    : null
             }
             {
                 // subtitle

@@ -13,15 +13,18 @@
 import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 
+// init analytics
+import ReactGA from "react-ga"
+ReactGA.initialize("UA-76117337-8");
+ReactGA.pageview(window.location.pathname);
+
 // import parts and pages
 import Header from "./primary/header"
 import Footer from "./primary/footer"
-
 import Home from "../pages/home/home"
 import About from "../pages/about/about"
 import Faq from "../pages/faq/faq"
 import Start from "../pages/start/start"
-
 import "./styles/base.css"
 
 // build app

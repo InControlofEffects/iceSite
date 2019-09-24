@@ -13,7 +13,7 @@ import React from "react"
 import "../styles/document.css"
 const doc = (props) => {
     return (
-        <article id={props.id ? props.id : '' }className="doc" aria-label={props.description}>
+        <article id={props.id ? props.id : '' } className="doc" aria-label={props.description}>
             {props.children}
         </article>
     )

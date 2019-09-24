@@ -26,7 +26,7 @@ const section = (props) => {
         <section
             id={props.id ? props.id : null}
             className={cssWithWidth}
-            aria-label={props.description ? props.description : console.warn("Section component is used, but no description given for aria-label. Use `description=....` to set.")}
+            aria-label={props.description ? props.description : null }
         >
             {
                 // process title

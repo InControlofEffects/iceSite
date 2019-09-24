@@ -22,7 +22,9 @@ import InfoCard from "../../components/elements/info-card"
 
 // import images
 import Image from "../../components/images/hill.jpg"
-import { UndrawDoctor, UndrawSelect, UndrawFileSearching } from "react-undraw-illustrations"
+import UndrawSelect from "../../components/images/undrawSelect"
+import UndrawFileSearch from "../../components/images/undrawFileSearch"
+import UndrawDoctor from "../../components/images/undrawDoctor-2"
 
 // import styles
 import "./home.css"
@@ -81,24 +83,23 @@ class home extends React.Component {
                     <Section description="about the in control of effects tool">
                         <h2>Welcome</h2>
                         <p>The <strong>In Control of Effects</strong> app is an experimental tool designed to increase awareness about antipsychotic medications and the risk of side effects. This may be important if there are side effects that you are unaware of or that you would like to avoid.</p>
-                        <p>This project is supported by...</p>
                     </Section>
                     <Section css="howToFigures" description="how to use this app">
                         <h2>How to</h2>
                         <p>Here's how to use the <strong>In Control of Effects</strong> app.</p>
                         <GridLayout layout="33x3" description="steps for using the app">
                             <figure className="grid-item-left image-box" aria-label="a mobile phone displaying a checked option">
-                                <UndrawSelect height="150px" PrimaryColor="#4655a8" />
+                                <UndrawSelect css="undraw-image" />
                                 <h3 className="image-box-text image-caption">Choose side effects</h3>
                                 <p className="image-box-text image-description">Select the side effects that you would like to avoid.</p>
                             </figure>
                             <figure className="grid-item-center image-box" aria-label="a magnifying glass hovering over a document">
-                                <UndrawFileSearching height="150px" PrimaryColor="#4655a8" />
+                                <UndrawFileSearch css="undraw-image" />
                                 <h3 className="image-box-text image-caption">Review the results</h3>
                                 <p className="image-box-text image-description">Learn about medications and the side effects they may cause.</p>
                             </figure>
                             <figure className="grid-item-right image-box" aria-label="person talking with doctor">
-                                <UndrawDoctor height="150px" PrimaryColor="#4655a8" />
+                                <UndrawDoctor css="undraw-image" />
                                 <h3 className="image-box-text image-caption">Discuss the results</h3>
                                 <p className="image-box-text image-description">Take note of the results and discuss them with your psychiatrist.</p>
                             </figure>

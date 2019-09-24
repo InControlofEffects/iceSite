@@ -18,7 +18,11 @@
     position: relative;
 }
 
-.howToFigures .image-box svg {
+.howToFigures .image-box .undraw-image {
+    display: block;
+    margin: 0 auto;
+    height: 150px;
+    width: 200px;
     padding-top: 32px;
 }
 

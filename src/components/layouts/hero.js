@@ -17,7 +17,7 @@ const hero = (props) => {
     // process css stlyes for header - set height and background-image
     const headerCSS = {
         backgroundImage: props.backgroundImage ? `url(${props.backgroundImage})` : null,
-        height: props.height ? props.height : "70vh",
+        // height: props.height ? props.height : "70vh",
     }
 
     // apply css for the filter element
@@ -90,7 +90,7 @@ const hero = (props) => {
             </div>
             {
                 (props.backgroundImage && !props.photoCredit) === true
-                    ? console.warn("No photo credit supplied when background image is specified. Use property 'photoCredit' to supply this information.")
+                    ? null
                     : (
                         <cite className={photocreditClassNames} style={photocreditCSS}>
                             {props.photoCredit}
