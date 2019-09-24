@@ -1,4 +1,9 @@
 node_modules
 .cache
 src
-README.md
+dist
+LICENSE
+.DS_STORE
+ice-site.code-workspace
+package-lock.json
+package.json
