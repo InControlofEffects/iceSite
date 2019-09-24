@@ -2,7 +2,6 @@ node_modules
 .cache
 src
 dist
-README.md
 LICENSE
 .DS_STORE
 ice-site.code-workspace
