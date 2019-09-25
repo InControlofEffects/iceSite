@@ -84,7 +84,7 @@
     height: 100vh;
     clip: auto;
     padding: 0;
-    padding-top: 82px;
+    padding-top: 112px;
 }
 
 .navbar .navlinks.expanded .menu-item {
@@ -93,7 +93,7 @@
 }
 
 .navbar .navlinks.expanded .menu-item .menu-link {
-    font-size: 18pt;
+    font-size: 21pt;
     color: hsl(231, 41%, 47%);
 }
 

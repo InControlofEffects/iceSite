@@ -2,7 +2,7 @@
 // FILE: document-section.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-05-02
-// MODIFIED: 2019-06-11
+// MODIFIED: 2019-09-25
 // PURPOSE: generic layout for documents (i.e., all pages)
 // DEPENDENCIES: react, document.css
 // STATUS: working; complete;
@@ -18,7 +18,7 @@ import React from "react"
 const section = (props) => {
 
     // process props
-    const css = props.css ? `doc-section ${props.css}` : "doc-section";
+    const css = props.className ? `doc-section ${ props.className }` : "doc-section";
     const cssWithWidth = props.fullWidth ? `${css} full-width` : `${css} normal-width`;
 
     // render

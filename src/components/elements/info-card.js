@@ -2,19 +2,17 @@
 // FILE: info-card.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-11
+// MODIFIED: 2019-09-25
 // PURPOSE: react component for info cards
 // DEPENDENCIES: see below
-// STATUS: in.progress
+// STATUS: working
 // COMMENTS: NA
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
-
 import React from "react"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import ReactMarkdown from "react-markdown"
 import "../styles/info-card.css"
-
 export default class InfoCard extends React.Component {
 
     // set props

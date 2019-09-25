@@ -2,7 +2,7 @@
 // FILE: header.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-13
+// MODIFIED: 2019-09-25
 // PURPOSE: react component for page header
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -10,11 +10,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React from "react"
-import { Link } from "react-router-dom"
-
 import Nav from "./nav"
 import "../styles/header.css"
-import Logo from "../elements/logo"
+import Logo from "../images/Logo"
 
 // define header
 class header extends React.Component {
@@ -52,7 +50,7 @@ class header extends React.Component {
     render() {
 
         // process props
-        const css = this.props.css ? `navbar ${this.props.css}` : 'navbar';
+        const css = this.props.className ? `navbar ${this.props.className}` : 'navbar';
 
         // return
         return (

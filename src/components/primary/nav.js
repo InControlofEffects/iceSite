@@ -2,14 +2,13 @@
 // FILE: nav.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-13
+// MODIFIED: 2019-09-25
 // PURPOSE: react component for site header
 // DEPENDENCIES: see below
 // STATUS: in.progress
 // COMMENTS: NA
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
-
 import React from "react"
 import { Link } from "react-router-dom"
 import navlinks from "../nav.json"

@@ -18,7 +18,6 @@ import Page from "../../components/layouts/page"
 import Hero from "../../components/layouts/hero"
 import Document from "../../components/layouts/doc"
 import Section from "../../components/layouts/doc-section"
-
 import Image from "../../components/images/buildings.jpg"
 
 // section: about

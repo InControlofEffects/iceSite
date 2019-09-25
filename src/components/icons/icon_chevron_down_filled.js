@@ -2,7 +2,7 @@
 // FILE: icon_chevron_down_filled.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-05-16
-// MODIFIED: 2019-05-16
+// MODIFIED: 2019-09-25
 // PURPOSE: react component for icon 
 // DEPENDENCIES: react
 // STATUS: working
@@ -18,7 +18,9 @@ import React from "react"
 // build
 const icon = (props) => {
     return (
-        <svg className={props.className ? props.className : null} xmlns="http://www.w3.org/2000/svg" width="25" height="15" viewBox="0 0 25 15">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className={props.className ? props.className : null} width="25" height="15" viewBox="0 0 25 15">
+            <title>icon - filled down chevron</title>
+            <desc>downward pointing chevron</desc>
             <path stroke="currentColor" strokeLinecap="round" strokeWidth="2px" fill="currentColor" d="M0,2 12.5,15 25,2 Z" />
         </svg>
     )

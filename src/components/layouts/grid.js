@@ -2,7 +2,7 @@
 // FILE: grid.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-05-01
-// MODIFIED: 2019-06-11
+// MODIFIED: 2019-09-25
 // PURPOSE: react component for creating grid layouts
 // DEPENDENCIES: react; grid.css
 // STATUS: working; complete
@@ -18,7 +18,7 @@ const grid = (props) => {
     
     // process vars
     const id = props.id ? props.id : '';
-    const css = props.css ? props.css : '';
+    const css = props.className ? props.className : '';
     const desc = props.description ? props.description : ''
 
     // render

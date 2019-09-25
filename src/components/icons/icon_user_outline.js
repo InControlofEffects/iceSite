@@ -2,7 +2,7 @@
 // FILE: icon_user_outline.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-05-16
-// MODIFIED: 2019-05-16
+// MODIFIED: 2019-09-25
 // PURPOSE: react component for icon 
 // DEPENDENCIES: react
 // STATUS: working
@@ -18,7 +18,9 @@ import React from "react"
 // build
 const icon = (props) => {
     return (
-        <svg className={props.className ? props.className : null} width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className={props.className ? props.className : null} width="50px" height="50px" viewBox="0 0 50 50">
+            <title>icon user outlined</title>
+            <desc>the shape of a person in a circle</desc>
             <g id="icon-user-outline" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <circle id="outline" stroke="currentColor" strokeWidth="2" cx="25" cy="25" r="24"></circle>
                 <g id="user" transform="translate(11.280196, 6.000000)" stroke="currentColor" strokeWidth="2">

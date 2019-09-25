@@ -2,7 +2,7 @@
 // FILE: footer.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-11
+// MODIFIED: 2019-09-25
 // PURPOSE: footer page
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -10,10 +10,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React from "react"
-// import BackgroundImg from "../images/Background.svg"
 import Nav from "./nav"
 import "../styles/footer.css"
-import Logo from "../elements/logo"
+import Logo from "../images/Logo"
 
 const footer = () => {
     return (

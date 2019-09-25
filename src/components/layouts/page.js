@@ -2,7 +2,7 @@
 // FILE: main.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-11
+// MODIFIED: 2019-09-25
 // PURPOSE: react component for main
 // DEPENDENCIES: see below
 // STATUS: in.progress

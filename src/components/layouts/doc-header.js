@@ -2,7 +2,7 @@
 // FILE: doc-header.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-17
-// MODIFIED: 2019-09-17
+// MODIFIED: 2019-09-25
 // PURPOSE: document header
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -18,7 +18,7 @@ const header = (props) => {
     return (
         <article
             id={ props.id ? props.id : null }
-            className={props.css ? `doc-header ${props.css}` : "doc-header"}
+            className={props.className ? `doc-header ${ props.className }` : "doc-header"}
             aria-label={props.description ? props.description : null }
         >
             {

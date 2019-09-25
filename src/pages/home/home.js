@@ -2,14 +2,13 @@
 // FILE: index.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-11
+// MODIFIED: 2019-09-25
 // PURPOSE: react component for "home page"
 // DEPENDENCIES: see below
 // STATUS: in.progress
 // COMMENTS: NA
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
-
 import React from "react"
 
 // import components
@@ -19,14 +18,10 @@ import Section from "../../components/layouts/doc-section"
 import GridLayout from "../../components/layouts/grid"
 import Hero from "../../components/layouts/hero"
 import InfoCard from "../../components/elements/info-card"
-
-// import images
 import Image from "../../components/images/hill.jpg"
 import UndrawSelect from "../../components/images/undrawSelect"
 import UndrawFileSearch from "../../components/images/undrawFileSearch"
 import UndrawDoctor from "../../components/images/undrawDoctor-2"
-
-// import styles
 import "./home.css"
 
 // define home page
@@ -89,17 +84,17 @@ class home extends React.Component {
                         <p>Here's how to use the <strong>In Control of Effects</strong> app.</p>
                         <GridLayout layout="33x3" description="steps for using the app">
                             <figure className="grid-item-left image-box" aria-label="a mobile phone displaying a checked option">
-                                <UndrawSelect css="undraw-image" />
+                                <UndrawSelect className="undraw-image" />
                                 <h3 className="image-box-text image-caption">Choose side effects</h3>
                                 <p className="image-box-text image-description">Select the side effects that you would like to avoid.</p>
                             </figure>
                             <figure className="grid-item-center image-box" aria-label="a magnifying glass hovering over a document">
-                                <UndrawFileSearch css="undraw-image" />
+                                <UndrawFileSearch className="undraw-image" />
                                 <h3 className="image-box-text image-caption">Review the results</h3>
                                 <p className="image-box-text image-description">Learn about medications and the side effects they may cause.</p>
                             </figure>
                             <figure className="grid-item-right image-box" aria-label="person talking with doctor">
-                                <UndrawDoctor css="undraw-image" />
+                                <UndrawDoctor className="undraw-image" />
                                 <h3 className="image-box-text image-caption">Discuss the results</h3>
                                 <p className="image-box-text image-description">Take note of the results and discuss them with your psychiatrist.</p>
                             </figure>

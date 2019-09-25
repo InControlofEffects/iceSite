@@ -2,7 +2,7 @@
 // FILE: hero.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-11
+// MODIFIED: 2019-09-25
 // PURPOSE: react component for creating page heros
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -16,8 +16,7 @@ const hero = (props) => {
 
     // process css stlyes for header - set height and background-image
     const headerCSS = {
-        backgroundImage: props.backgroundImage ? `url(${props.backgroundImage})` : null,
-        // height: props.height ? props.height : "70vh",
+        backgroundImage: props.backgroundImage ? `url(${props.backgroundImage})` : null
     }
 
     // apply css for the filter element

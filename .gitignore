@@ -2,5 +2,4 @@
 .cache
 node_modules
 dist
-public
 README.md

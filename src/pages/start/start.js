@@ -33,7 +33,7 @@ const start = () => {
                 </Header>
                 <Section description="instructions" id="instructionsBlock">
                     <h2>How to use the In Control of Effects app</h2>
-                    <GridLayout layout="40x60" css="instruction-box">
+                    <GridLayout layout="40x60" className="instruction-box">
                         <div className="grid-item-left">
                             <p className="instruction-number" id="step-1">1</p>
                         </div>
@@ -42,7 +42,7 @@ const start = () => {
                             <p>When the app loads, you will be prompted to enter a username and password. Type the  credentials provided by the study coordinator and click sign in. If you encounter any issues signing in to the app, please contact the study coordinator.</p>
                         </div>
                     </GridLayout>
-                    <GridLayout layout="40x60" css="instruction-box">
+                    <GridLayout layout="40x60" className="instruction-box">
                         <div className="grid-item-left">
                             <p className="instruction-number" id="step-2">2</p>
                         </div>
@@ -51,7 +51,7 @@ const start = () => {
                             <p>In the app, use the back and next buttons to navigate the app. The progress bar at the top will give you indication of where you are in the app. Use the restart button located at the top of page, to start from at beginning of app.</p>
                         </div>
                     </GridLayout>
-                    <GridLayout layout="40x60" css="instruction-box">
+                    <GridLayout layout="40x60" className="instruction-box">
                         <div className="grid-item-left">
                             <p className="instruction-number" id="step-3">3</p>
                         </div>
@@ -61,7 +61,7 @@ const start = () => {
                             <p>You can also read more about each side effect by tapping or clicking the expand button. When you have made and are satisfied with your selections, tap or click the submit button.</p>
                         </div>
                     </GridLayout>
-                    <GridLayout layout="40x60" css="instruction-box">
+                    <GridLayout layout="40x60" className="instruction-box">
                         <div className="grid-item-left">
                             <p className="instruction-number" id="step-4">4</p>
                         </div>
@@ -72,7 +72,7 @@ const start = () => {
                             <p>The results are based on the side effects that your selected and pre-existing data. See the <Link to="/faq">FAQ</Link> for more information.</p>
                         </div>
                     </GridLayout>
-                    <GridLayout layout="40x60" css="instruction-box">
+                    <GridLayout layout="40x60" className="instruction-box">
                         <div className="grid-item-left">
                             <p className="instruction-number" id="step-5">5</p>
                         </div>
@@ -83,7 +83,6 @@ const start = () => {
                         </div>
                     </GridLayout>
                 </Section>
-                
                 <Section description="limitations">
                     <h2>Limitions</h2>
                     <p>Even though this app takes into account your preferences for side effects, this app does not take into account individual patient characteristics, pre-existing medical conditions, or any current medical treatment or medications you may already be taking. These are important and should be taken into consideration before any recommendation is made. Any information produced by this tool should be discussed with your psychiatrist.</p>
@@ -94,7 +93,7 @@ const start = () => {
                 <Section description="get started">
                     <h2>Get started</h2>
                     <p>If you have any remaining questions about the app, visit the <Link to="about">About</Link> page and the <Link to="/faq">FAQ</Link> page. When you are ready to begin, press the start button below.</p>
-                    <a href="#" className="btn btn-primary" id="launchApp">Start</a>
+                    <a href="/app/" className="btn btn-primary" id="launchApp">Start</a>
                 </Section>
             </Document>
         </Page>

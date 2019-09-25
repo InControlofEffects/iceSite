@@ -5,7 +5,7 @@
     background-position: 50% 100%;
     position: relative;
     z-index: 0;
-    height: 85vh;
+    height: 100vh;
 }
 
 .hero .hero-filter {
@@ -72,6 +72,13 @@
 
 .hero .hero-photo-credit.position-below {
     bottom: -24px;
+}
+
+@media screen and (min-width: 517px){
+
+    .hero {
+        height: 80vh;
+    }
 }
 
 @media screen and (min-width: 972px) {
