@@ -2,7 +2,7 @@
 // FILE: footer.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-11-14
 // PURPOSE: footer page
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -14,7 +14,8 @@ import Nav from "./nav"
 import "../styles/footer.css"
 import Logo from "../images/Logo"
 
-const footer = () => {
+// define
+function footer(props){
     return (
         <footer className="footer" >
             <div className="footer-content">

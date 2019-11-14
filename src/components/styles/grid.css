@@ -14,6 +14,27 @@
     margin-bottom: 32px;
 }
 
+/* define styles for if figures are used inside grid items */
+.grid-item-left .grid-figure,
+.grid-item-center .grid-figure,
+.grid-item-right .grid-figure,
+.grid-item-inner-left .grid-figure,
+.grid-item-inner-right .grid-figure,
+.grid-item-outer-left .grid-figure,
+.grid-item-outer-right .grid-figure {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+
 /* define new layouts below */
 /* EXAMPLE TEMPLATE
 .grid-20x5-layout {

@@ -2,7 +2,7 @@
 // FILE: icon_chevron_down.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-05-27
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-11-14
 // PURPOSE: react component for open chevron down icon
 // DEPENDENCIES: react
 // STATUS: working; complete
@@ -10,7 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React from "react"
-const icon = (props) => {
+function icon(props){
     return (
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className={props.className ? props.className : null} width="20px" height="20px" viewBox="0 0 20 20">
             <title>icon chevron down</title>

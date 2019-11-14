@@ -187,18 +187,34 @@
     box-shadow: none;
 }
 
-.navbar.navbar-transparent .logo, 
-.navbar.navbar-transparent .navlinks .menu-item .menu-link {
+.navbar.navbar.navbar-transparent .logo,
+.navbar.navbar.navbar-transparent .navlinks .menu-item .menu-link {
     color: white;
 }
 
+.navbar.navbar.navbar-transparent .navlinks.expanded {
+    background-color: #4456A8;
+}
+
+.navbar.navbar.navbar-transparent .navlinks.expanded .menu-item .menu-link {
+    color: white;
+}
+
+.navbar.navbar.navbar-transparent .navlinks.expanded .navlinks .menu-item .menu-link {
+    color: white;
+}
+
+
 .navbar.navbar-transparent .navlinks .menu-item .menu-link:hover, 
 .navbar.navbar-transparent .navlinks .menu-item .menu-link:focus, 
-.navbar.navbar-transparent .navlinks .menu-item .menu-link.selected {
+.navbar.navbar-transparent .navlinks .menu-item .menu-link.selected,
+.navbar.navbar-transparent .navlinks.expanded .menu-item .menu-link:hover, 
+.navbar.navbar-transparent .navlinks.expanded .menu-item .menu-link:focus, 
+.navbar.navbar-transparent .navlinks.expanded .menu-item .menu-link.selected {
     border-bottom-color: white;
 }
 
-.navbar.navbar-transparent .menu-item #toggle .menu-bar {
+.toggle-transparent-background-color {
     background-color: white;
 }
 

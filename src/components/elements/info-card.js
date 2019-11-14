@@ -33,11 +33,11 @@ export default class InfoCard extends React.Component {
         // gather options and create flags 
         const link = (typeof this.props.linkUrl != "undefined" && typeof this.props.linkLabel != "undefined")
         const isExternal = (typeof this.props.isExternal === "undefined" || this.props.isExternal === false)
-        const css = (this.props.css ? `feature ${this.props.css}` : "feature")
+        const css = (this.props.className ? `feature ${this.props.className}` : "feature")
 
         // return 
         return (
-            <div className={css} aria-label={`info card on ${this.props.title}`}>
+            <div className={css} aria-label={`info card on ${this.props.title}`} {...props}>
                 {
                     // include background image if specified
                     this.props.backgroundImage

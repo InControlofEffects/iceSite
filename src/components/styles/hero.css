@@ -17,7 +17,6 @@
     padding: 0;
     margin: 0;
     z-index: 1;
-    background-color: transparent;
 }
 
 .hero .hero-content {
@@ -30,6 +29,7 @@
     height: 100%;
     margin: 0 auto;
     background-color: transparent;
+    text-align: left;
 }
 
 .hero .hero-text {
@@ -55,6 +55,10 @@
     font-size: 16pt;
     line-height: 1.4;
     margin-top: 12px;
+}
+
+.hero .btn {
+    margin: 12px auto;
 }
 
 .hero .hero-photo-credit {
@@ -90,5 +94,6 @@
     .hero .hero-content {
         max-width: 972px;
         margin: 0 auto;
+        text-align: center;
     }
 }

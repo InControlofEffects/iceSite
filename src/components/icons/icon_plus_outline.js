@@ -2,7 +2,7 @@
 // FILE: icon_plus_outline.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-21
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-11-14
 // PURPOSE: react component for plus icon outline
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -10,7 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React from "react"
-const icon = (props) => {
+function icon(props){
     return (
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className={props.className ? props.className : null} width="50px" height="50px" viewBox="0 0 50 50">
             <title>icon-plus-outline</title>

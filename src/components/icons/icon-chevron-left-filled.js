@@ -2,7 +2,7 @@
 // FILE: icon-chevron-left-filled.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-05-27
-// MODIFIED: 2019-05-27
+// MODIFIED: 2019-11-14
 // PURPOSE: function component for left point filled chevron
 // DEPENDENCIES: react
 // STATUS: working
@@ -10,7 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React from "react"
-const icon = (props) => {
+function icon(props){
     return (
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className={props.css ? props.css : null} width="50px" height="50px" viewBox="0 0 50 50">
             <title>icon-chevron-left-filled</title>

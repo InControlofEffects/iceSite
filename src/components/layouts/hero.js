@@ -2,7 +2,7 @@
 // FILE: hero.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-11-14
 // PURPOSE: react component for creating page heros
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -11,22 +11,24 @@
 // BEGIN
 import React from "react"
 import "../styles/hero.css"
-
-const hero = (props) => {
+function hero(props){
 
     // process css stlyes for header - set height and background-image
     const headerCSS = {
-        backgroundImage: props.backgroundImage ? `url(${props.backgroundImage})` : null
+        backgroundImage: props.backgroundImage ? `url(${props.backgroundImage})` : null,
+        height: props.height ? props.height : null
     }
 
     // apply css for the filter element
     const filterCSS = {
-        backgroundColor: props.backgroundColor ? props.backgroundColor : "hsla(30, 50%, 20%, 0.2)"
+        // backgroundColor: props.backgroundColor ? props.backgroundColor : "hsla(30, 50%, 20%, 0.2)"
+        backgroundColor: props.backgroundColor ? props.backgroundColor : null,
     }
 
     // apply css for text color
     const textCSS = {
-        color: props.textColor ? props.textColor : "#252525"
+        color: props.textColor ? props.textColor : "#252525",
+        textAlign: props.textAlign ? props.textAlign : null
     }
 
     // apply css for photo credits

@@ -2,7 +2,7 @@
 // FILE: undrawFileSearch.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-24
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-11-14
 // PURPOSE: react component for undraw file search image
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -10,9 +10,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React from "react"
-const img = (props) => {
+function undrawFileSearch(props) {
     return (
-        <svg id="9a5c15f4-7944-40bc-b8da-d63b7d478a28" className={props.className ? props.className : null} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="842" height="778.92" viewBox="0 0 842 778.92">
+        <svg id="9a5c15f4-7944-40bc-b8da-d63b7d478a28" className={props.className ? props.className : null} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={ props.width ? props.width : 842 } height={props.height ? props.height : 778.92 } viewBox="0 0 842 778.92" {...props}>
             <defs>
                 <linearGradient id="a91ba363-77be-43f7-9cf6-91c4a3880d9c" x1="378.37" y1="732.81" x2="378.37" y2="130.21" gradientUnits="userSpaceOnUse">
                     <stop offset="0" stopColor="gray" stopOpacity="0.25" />
@@ -120,4 +120,4 @@ const img = (props) => {
         </svg>
     )
 }
-export default img
+export default undrawFileSearch

@@ -2,7 +2,7 @@
 // FILE: icon_user.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-05-16
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-11-14
 // PURPOSE: react component for icon 
 // DEPENDENCIES: react
 // STATUS: working
@@ -16,7 +16,7 @@
 import React from "react"
 
 // build
-const icon = (props) => {
+function icon(props){
     return (
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className={props.className ? props.className : null} viewBox="0 0 24 24" width="24" height="24">
             <title>icon user</title>

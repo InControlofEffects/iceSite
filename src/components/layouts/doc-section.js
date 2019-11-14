@@ -2,7 +2,7 @@
 // FILE: document-section.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-05-02
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-11-14
 // PURPOSE: generic layout for documents (i.e., all pages)
 // DEPENDENCIES: react, document.css
 // STATUS: working; complete;
@@ -15,18 +15,20 @@
 import React from "react"
 
 // define layout component
-const section = (props) => {
+function section(props){
 
     // process props
     const css = props.className ? `doc-section ${ props.className }` : "doc-section";
     const cssWithWidth = props.fullWidth ? `${css} full-width` : `${css} normal-width`;
+    const cssCentered = props.centerContent ? `${cssWithWidth} section-centered` : `${cssWithWidth}`;
 
     // render
     return (
         <section
             id={props.id ? props.id : null}
-            className={cssWithWidth}
+            className={ cssCentered }
             aria-label={props.description ? props.description : null }
+            style={props.style ? props.style : null }
         >
             {
                 // process title
@@ -39,8 +41,14 @@ const section = (props) => {
                 : null
             }
             {
-                // render all props as is
-                props.children
+                // render inner content if fullwidth is true
+                props.fullWidth
+                ?   (
+                    <div className="full-width-content">
+                        { props.children }
+                    </div>
+                )
+                : props.children
             }
         </section>
     )

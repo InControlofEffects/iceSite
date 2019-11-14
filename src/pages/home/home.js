@@ -2,7 +2,7 @@
 // FILE: index.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-11-14
 // PURPOSE: react component for "home page"
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -10,124 +10,95 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React from "react"
+import { Link } from "react-router-dom"
 
 // import components
 import Page from "../../components/layouts/page"
 import Document from "../../components/layouts/doc"
 import Section from "../../components/layouts/doc-section"
-import GridLayout from "../../components/layouts/grid"
+import FlexLayout from "../../components/layouts/flex"
 import Hero from "../../components/layouts/hero"
-import InfoCard from "../../components/elements/info-card"
-import Image from "../../components/images/hill.jpg"
-import UndrawSelect from "../../components/images/undrawSelect"
-import UndrawFileSearch from "../../components/images/undrawFileSearch"
-import UndrawDoctor from "../../components/images/undrawDoctor-2"
-import "./home.css"
+import Conversation from "../../components/images/conversation"
+import AppDisplay from "../../components/images/apps"
+import Select from "../../components/images/undrawSelect"
+import FileSearch from "../../components/images/undrawFileSearch"
+import Doctors from "../../components/images/undrawDoctor-2"
+import HeaderImage from "../../components/images/georg-nietsch-0IJZuitOZFE-unsplash.jpg"
 
 // define home page
-class home extends React.Component {
-
-    // constructor
-    constructor(props) {
-        super(props);
-        this.__onScroll = this.__onScroll.bind(this);
-    }
-
-    // define onScroll function
-    __onScroll(event) {
-        const el = document.querySelector(".navbar");
-        let scroll = event.path[1].scrollY;
-        const scrollBreakPoint = 150;
-        if (scroll > scrollBreakPoint) {
-            el.classList.remove("navbar-transparent");
-        }
-        if (scroll < scrollBreakPoint) {
-            el.classList.add("navbar-transparent");
-        }
-
-    }
-
-    // lifecycle - add blended background class for navbar
-    // componentDidMount() {
-    //     const el = document.querySelector(".navbar");
-    //     el.classList.add("navbar-transparent");
-    //     window.addEventListener("scroll", this.__onScroll)
-    // }
-
-    // lifecycle - remove blended classes when unmounting
-    // componentWillUnmount() {
-    //     const el = document.querySelector(".navbar");
-    //     el.classList.remove("navbar-transparent");
-    //     window.removeEventListener("scroll", this.__onScroll);
-    // }
-
-    // render
-    render() {
-        return (
-            <Page title="Home" id="home-page">
-                <Hero 
-                    title="In Control of Effects" 
-                    subtitle="A decision aid for the choice of antipsychotics" 
-                    id="welcomeHero" 
-                    backgroundImage={Image} 
-                    photoCredit="Photo by Georg Nietsch on Unsplash" 
-                    photoCreditBelow={false}
-                    textColor="#ffffff"
-                />
-                <Document>
-                    <Section description="about the in control of effects tool">
-                        <h2>Welcome</h2>
-                        <p>The <strong>In Control of Effects</strong> app is an experimental tool designed to increase awareness about antipsychotic medications and the risk of side effects. This may be important if there are side effects that you are unaware of or that you would like to avoid.</p>
-                    </Section>
-                    <Section css="howToFigures" description="how to use this app">
-                        <h2>How to</h2>
-                        <p>Here's how to use the <strong>In Control of Effects</strong> app.</p>
-                        <GridLayout layout="33x3" description="steps for using the app">
-                            <figure className="grid-item-left image-box" aria-label="a mobile phone displaying a checked option">
-                                <UndrawSelect className="undraw-image" />
-                                <h3 className="image-box-text image-caption">Choose side effects</h3>
-                                <p className="image-box-text image-description">Select the side effects that you would like to avoid.</p>
+function home(){
+    return (
+        <Page title="Home" id="home-page" transparentNavbar={true}>
+            <Hero
+                id="home"
+                className="home-hero"
+                title="In Control of Effects"
+                subtitle="A decision aid for the choice of antipsychotics"
+                textColor="white"
+                textAlign="left"
+                backgroundImage={HeaderImage}
+                backgroundColor="rgba(76, 51, 25, 0.2)"
+                photoCredit="Photo by Georg Nietsch on Unsplash"
+            />
+            <Document className="welcome-document">
+                <Section className="welcome" description="about">
+                    <FlexLayout layout="60x40" className="welcome-flex" wrapReverse={true}>
+                        <div>
+                            <h2>The In Control of Effects app</h2>
+                            <p> The <strong>In Control of Effects</strong> app aims to increase awareness about antipsychotic medications and the risk of side effects. By selecting side effects, you can learn about which medications are more likely or less likely to result in the side effects you may want to avoid.</p>
+                        </div>
+                        <figure className="figure">
+                            <AppDisplay className="illustrations illustration-lg" />
+                        </figure>
+                    </FlexLayout>
+                </Section>
+                <Section className="how-to-section" description="how to use this app">
+                    <h2>How to use the In Control of Effects app</h2>
+                    <p>The app is web-based and you can use any computer, smartphone and tablet to access the site. Here's how to use the app.</p>
+                    <ol className="flex flex-50x2-layout instructions-list">
+                        <li className="flex-child">
+                            <figure className="figure">
+                                <Select className="illustrations illustration-select" />
                             </figure>
-                            <figure className="grid-item-center image-box" aria-label="a magnifying glass hovering over a document">
-                                <UndrawFileSearch className="undraw-image" />
-                                <h3 className="image-box-text image-caption">Review the results</h3>
-                                <p className="image-box-text image-description">Learn about medications and the side effects they may cause.</p>
+                            <h3>Select side effects</h3>
+                            <p>Select the side effects that you want to avoid or the ones that you definitely do not want.</p>
+                        </li>
+                        <li className="flex-child">
+                            <figure className="figure">
+                                <FileSearch className="illustrations illustration-file-search" />
                             </figure>
-                            <figure className="grid-item-right image-box" aria-label="person talking with doctor">
-                                <UndrawDoctor className="undraw-image" />
-                                <h3 className="image-box-text image-caption">Discuss the results</h3>
-                                <p className="image-box-text image-description">Take note of the results and discuss them with your psychiatrist.</p>
+                            <h3>Review the results</h3>
+                            <p>Learn about the medications and the side effects they may cause. </p>
+                        </li>
+                        <li className="flex-child">
+                            <figure className="figure">
+                                <Doctors className="illustrations illustration-doctor" />
                             </figure>
-                        </GridLayout>
-                    </Section>
-                    <Section description="available pages">
-                        <h2>Getting started</h2>
-                        <p>Before you get start the <strong>In Control of Effects</strong> app, you can learn more by about this research project and visit our frequently asked questions page. When you are ready, head to the start page.</p>
-                        <GridLayout id="homeFeatures" layout="33x3" description="our current available pages">
-                            <InfoCard css="grid-item-left"
-                                title="About"
-                                text="Learn more about this research project and the development of the app."
-                                linkUrl="/about"
-                                linkLabel="read"
-                            />
-                            <InfoCard css="grid-item-center"
-                                title="FAQ"
-                                text="Find answers to all of your questions about how to use the app."
-                                linkUrl="/faq"
-                                linkLabel="Read"
-                            />
-                            <InfoCard css="grid-item-right"
-                                title="Start"
-                                text="Ready to start? Let's get started by reading through the instructions."
-                                linkUrl="/start"
-                                linkLabel="Start"
-                            />
-                        </GridLayout>
-                    </Section>
-                </Document>
-            </Page>
-        )
-    }
+                            <h3>Discuss with your psychiatrist</h3>
+                            <p>Take note of the results and discuss them with your psychiatrist.</p>
+                        </li>
+                    </ol>
+                </Section>
+                <Section className="questions-section" description="where to answers">
+                    <FlexLayout layout="60x40" className="questions-grid" wrapReverse={true}>
+                        <div>
+                            <h2>Do you have questions?</h2>
+                            <p>Do you have any questions about the app or are you stuck? Read more on the app on our Frequently Asked Questions page.</p>
+                            <Link className="btn btn-primary" to="/how-to">Read</Link>
+                        </div>
+                        <figure className="figure">
+                            <Conversation className="illustration" />
+                        </figure>
+                    </FlexLayout>
+                </Section>
+            </Document>
+            <Section className="start-section" centerContent={true}>
+                <h2>Get started</h2>
+                <p>Ready to start the app? Before you begin, let's go through the instructions.</p>
+                <Link to="/start" className="btn btn-primary">Start</Link>
+            </Section>
+        </Page>
+    )
 }
 
 // export

@@ -2,7 +2,7 @@
 // FILE: nav.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-11-14
 // PURPOSE: react component for site header
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -14,7 +14,7 @@ import { Link } from "react-router-dom"
 import navlinks from "../nav.json"
 
 // build component
-export default class nav extends React.Component {
+class nav extends React.Component {
 
     // constructor
     constructor(props) {
@@ -65,3 +65,4 @@ export default class nav extends React.Component {
         )
     }
 }
+export default nav

@@ -15,27 +15,26 @@ import { Link } from "react-router-dom"
 
 // import components
 import Page from "../../components/layouts/page"
-import Hero from "../../components/layouts/hero"
+import Hero from "../../components/layouts/hero-alt"
 import Document from "../../components/layouts/doc"
+import Header from "../../components/layouts/doc-header"
 import Section from "../../components/layouts/doc-section"
 import FAQ from "../../components/layouts/doc-faq"
-
-// import images and stuff
-import Image from "../../components/images/books-1.jpg"
+import QuestionsImage from "../../components/images/conversation"
 import PlusIcon from "../../components/icons/icon_plus_outline"
 
 // define page
-class faq extends Component{
-    
-    constructor(props){
+class faq extends Component {
+
+    constructor(props) {
         super(props);
         this.state = {
-            isOpen: false 
+            isOpen: false
         }
         this.toggleAllSections = this.toggleAllSections.bind(this);
     }
 
-    toggleAllSections(){
+    toggleAllSections() {
 
         // get status
         let toggleLabel = document.querySelector(".btn-label");
@@ -43,11 +42,11 @@ class faq extends Component{
 
         let sections = document.querySelectorAll(".faq-section");
         let button, content;
-        
+
         // run logic
         // select inner elements + remove classes + modify aria-attributes
-        if( this.state.isOpen ) {
-            sections.forEach(function(s){
+        if (this.state.isOpen) {
+            sections.forEach(function (s) {
                 button = s.querySelector(".expand-toggle");
                 content = s.querySelector(".hidden-content");
                 button.classList.remove("rotated");
@@ -59,7 +58,7 @@ class faq extends Component{
             toggleIcon.classList.remove("rotated");
             this.setState({ isOpen: false });
         } else {
-            sections.forEach(function(s){
+            sections.forEach(function (s) {
                 button = s.querySelector(".expand-toggle")
                 content = s.querySelector(".hidden-content");
                 button.classList.add("rotated");
@@ -75,25 +74,19 @@ class faq extends Component{
 
     ////////////////////////////////////////
     // render
-    render(){
+    render() {
         return (
             <Page title="FAQ">
-                <Hero 
-                    title="Frequently Asked Questions"
-                    backgroundImage={Image}
-                    photoCredit="Photo by Jonathan Brinkhorst on Unsplash"
-                    textColor="#ffffff"
-                />
                 <Document id="faq-page">
-                    <Section id="project-header" description="introduction">
-                        <h2>FAQ Categories</h2>
-                        <p>Each question is grouped into one of the following categories. If you any further questions, contact the study coordinator. You can also read through each question at your own pace. Click the following button to expand all content.</p>
-                        <button className="btn btn-plain" id="toggleSections" onClick={this.toggleAllSections}>
+                    <Header style={{paddingBottom: "32px"}}>
+                        <QuestionsImage style={{display: "block", margin: "0 auto"}}/>
+                        <h1 className="text-align-center">Frequently Asked Questions</h1>
+                        <p>Each question is grouped into several categories. If you any further questions, contact the study coordinator. Click the following button to expand all content.</p>
+                        <button className="btn btn-plain" id="toggleSections" onClick={this.toggleAllSections} style={{float: "right"}}>
                             <PlusIcon className="btn-icon" />
                             <label className="btn-label">open all</label>
                         </button>
-                        <hr />
-                    </Section>
+                    </Header>
                     <Section id="project-background" description="background questions">
                         <h2>Project Background</h2>
                         <FAQ id="what-is-the-in-control-of-effects-app"
@@ -120,7 +113,7 @@ class faq extends Component{
                             content="You may use any computer, tablet or smartphone to access the app. You may use any web browser you like. A username and password is required. See the next question for more information."
                         />
                         <FAQ id="do-i-need-an-account-to-use-the-app" title="Do I need an account to use the app?">
-                            <p>Yes, a username and password is required to use the app. Since the <strong>In Control of Effects</strong> app is part of ongoing research, we want to study the effectiveness and usefulness of the tool, as well as improving the design and functionality of the app before it is widely used. Until then, the app will require a username and password that will be given out by the study coordinator. Accounts will be given to individuals that are a part of the research project.</p>
+                            <p>Yes, a username and password is required to use the app. Since the <strong>In Control of Effects</strong> app is part of ongoing research, we want to study the effectiveness and usefulness of the tool, as well as make improvements to the design and functionality of the app before it is widely used. Until then, the app will require a username and password that will be given out by the study coordinator. Accounts will be given to individuals that are a part of the research project.</p>
                             <p>For those who are a part of the research project and were given a username and password, enter this information at the sign-in page and click *sign-in*.</p>
                         </FAQ>
                         <FAQ id="how-do-i-get-an-account"
@@ -161,7 +154,7 @@ class faq extends Component{
                             <p>Medications on the list of recommended medications mean that you are **less likely** to experience the side effects that you selected if you were prescribed that medication. Let's say you wanted to avoid weight gain and any irregular heartbeats. If you were perscribed one of the medications from the recommended list, then you have are less likely to gain any weight and are less likely of experiencing any irregulaties in heartbeat.</p>
                             <p><strong>Medications to Avoid</strong></p>
                             <p>Medications on the medications to avoid list mean that you are **more likely** to experience the side effects that you selected if you were perscribed that medication. Let's say you wanted to avoid muscle stiffness and tremors. If you were perscribed a medication that is listed on the *medications to avoid* list, you have are more likely to experience stiff muscles and tremors.</p>
-                            <p>Even though this app takes into account your preferences for side effects, this app does not take into account individual patient characteristics, pre-existing medical conditions, or any current medical treatment or medications you may already be taking. These are important and should be taken into consideration before any recommendation is made. Any information produced by this tool should be discussed with your psychiatrist.</p>   
+                            <p>Even though this app takes into account your preferences for side effects, this app does not take into account individual patient characteristics, pre-existing medical conditions, or any current medical treatment or medications you may already be taking. These are important and should be taken into consideration before any recommendation is made. Any information produced by this tool should be discussed with your psychiatrist.</p>
                         </FAQ>
                         <FAQ id="how-can-i-learn-more-about-a-medication"
                             title="How can I learn more about a medication?"

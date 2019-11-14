@@ -2,7 +2,7 @@
 // FILE: logo.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-18
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-11-14
 // PURPOSE: react component for logo
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -11,10 +11,10 @@
 // BEGIN
 import React from "react"
 import "../styles/logo.css";
-const logo = () => {
+function logo(props) {
     return (
         <p className="logo">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="logo-icon" width="45px" height="44px" viewBox="0 0 45 44">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="logo-icon" width="45px" height="44px" viewBox="0 0 45 44" {...props}>
                 <title>In Control of Effects</title>
                 <desc>logo for the in control of effects project</desc>
                 <g id="Logo" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

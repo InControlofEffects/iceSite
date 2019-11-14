@@ -1,33 +1,33 @@
 .doc {
     width: 100%;
-    padding: 32px 0;
+    padding: 0;
     margin: 0 auto;
     counter-reset: questions;
+    overflow: hidden;
 }
 
 .doc-header {
     width: 90%;
     margin: 0 auto;
-    padding: 18px 0;
-    background-color: transparent;
+    padding: 0;
+    padding-top: 112px;
+    background-color: white;
 }
 
 .doc-section {
+    padding: 44px 0;
     margin: 0 auto;
-    padding: 18px 0;
-    background-color: transparent;
-    position: relative;
 }
 
-.normal-width {
-    width: 90%;
+.doc-section .btn {
+    margin: 12px auto;
 }
 
-.full-width {
-    width: 100%;
-}
+.normal-width { width: 90%; }
 
-.full-width h1, .full-width h2 {
+.full-width { width: 100%; }
+
+.full-width .full-width-content {
     width: 90%;
     margin: 0 auto;
 }
@@ -38,12 +38,8 @@
     color: #3f454b;
 }
 
-.doc-section h2 {
-    margin-bottom: 24px;
-}
-
 .doc-section ul, .doc-section ol {
-    margin: 8px 0;
+    margin: 12px 0;
     margin-left: 24px;
 }
 
@@ -51,9 +47,32 @@
     margin: 0;
 }
 
-.doc-section hr {
-    border: none;
-    border-bottom: 1px solid #e6e6e6;
+.doc-section .instructions-list {
+    counter-set: item;
+    list-style: none;
+    margin-left: 0;
+}
+
+.doc-section .instructions-list li {
+    padding: 11px; 
+}
+
+.doc-section .instructions-list li h3 {
+    font-size: 14pt;
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+.doc-section .instructions-list li h3::before {
+    content: counter(item) ". ";
+    counter-increment: item;    
+}
+
+.doc-section .instructions-list li p {
+    font-size: 14pt;
+    line-height: 1.6;
 }
 
 .faq-section {
@@ -63,7 +82,7 @@
     border-radius: 6px;
     padding: 32px 24px;
     margin: 0 auto;
-    margin-bottom: 32px;
+    margin-top: 32px;
     -webkit-box-shadow: 0 0 6px 0 hsl(0, 0%, 80%);
     box-shadow: 0 0 6px 0 hsl(0, 0%, 80%);
 }
@@ -80,15 +99,9 @@
     counter-increment: questions;
 }
 
-.faq-section br {
-    display: block;
-    width: 1px;
-    height: 12px;
-}
-
 .faq-section .expand-toggle {
     position: absolute;
-    top: 35px;
+    top: 28px;
     right: 35px;
     color: #3f454b;
     cursor: pointer;
@@ -150,23 +163,37 @@
     transform-origin: top;
 }
 
+.doc-section.section-centered {
+    text-align: center;
+}
+
+.doc-section.section-centered .btn {
+    margin: 12px auto;
+}
+
 @media screen and (min-width: 972px) {
-    
-    .doc-header,
-    .doc-section.normal-width,
-    .full-width h1, .full-width h2 {
-        width: 70%;
-        max-width: 972px;
-        margin: 0 auto;
+
+    .doc-section .btn {
+        margin: 12px 0;
     }
 
-    .full-width {
-        width: 100%;
-        max-width: 100%;
+    .doc-header,
+    .doc-section.normal-width,
+    .doc-section.full-width .full-width-content {
+        max-width: 942px;
         margin: 0 auto;
     }
 
     .faq-section .hidden-content {
         margin-left: 32px;
+    }
+
+    .doc-section.section-centered *:not(.btn) {
+        width: 80%; 
+        margin: 0 auto;
+    }
+
+    .doc-section.section-centered .btn {
+        margin: 12px auto;
     }
 }

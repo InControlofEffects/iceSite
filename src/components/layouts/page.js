@@ -10,8 +10,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React, { Component } from "react"
-import "../styles/page.css"
 
+// init analytics
+import ReactGA from "react-ga"
+ReactGA.initialize("UA-76117337-8");
+ReactGA.pageview(window.location.pathname);
+
+// build component
 class main extends Component {
 
     constructor(props){
@@ -20,9 +25,8 @@ class main extends Component {
         this.__scrollToTop = this.__scrollToTop.bind(this);
         this.__closeMenu = this.__closeMenu.bind(this);
         this.__closeMenuOnResize = this.__closeMenuOnResize.bind(this);
+        this.__onScroll = this.__onScroll.bind(this);
     }
-
-    ////////////////////////////////////////
     
     // apply link highlighting to current page
     __highlightLink() {
@@ -43,7 +47,7 @@ class main extends Component {
             }
         })
     }
-
+    
     // scroll to top 
     // a simple function that scrolls to the top of the page
     __scrollToTop(){
@@ -91,6 +95,18 @@ class main extends Component {
         if(width >= breakpoint) {
             this.__closeMenu();
         }
+    }
+
+
+    // define onScroll function
+    __onScroll() {
+        const scrollBreakPoint = 50;
+        if (window.scrollY > scrollBreakPoint) {
+            document.querySelector(".navbar").classList.remove("navbar-transparent");
+        }
+        if (window.scrollY < scrollBreakPoint) {
+            document.querySelector(".navbar").classList.add("navbar-transparent");
+        }
 
     }
 
@@ -109,11 +125,28 @@ class main extends Component {
         // the breakpoint defined in header.css, then close the menu (i.e., remove
         // the css class "expanded")
         window.addEventListener("resize", this.__closeMenuOnResize)
+
+        // lifecycle - add blended background class for navbar
+        if( this.props.transparentNavbar ){
+            const el = document.querySelector(".navbar");
+            el.classList.add("navbar-transparent");
+            window.addEventListener("scroll", this.__onScroll);
+        }
     }
 
     // lifecycle: will unmount
     componentWillUnmount(){
-        window.removeEventListener("resize", this.__closeMenuOnResize)
+
+        // remove resizing listener
+        window.removeEventListener("resize", this.__closeMenuOnResize);
+
+        // lifecycle - remove blended classes when unmounting
+        if( this.props.transparentNavbar ){
+            const el = document.querySelector(".navbar");
+            el.classList.remove("navbar-transparent");
+            window.removeEventListener("scroll", this.__onScroll);
+        }
+
     }
 
     ////////////////////////////////////////
