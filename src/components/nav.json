@@ -1,0 +1,16 @@
+{
+    "links": [
+        {
+            "name" : "Home",
+            "path" : ""
+        },
+        {
+            "name" : "FAQ",
+            "path" : "faq"
+        },
+        {
+            "name" : "Start",
+            "path" : "start"
+        }
+    ]
+}

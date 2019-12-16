@@ -1,0 +1,40 @@
+@import "_variables";
+
+.footer {
+	padding: 72px 0;
+	background-color: $light;
+
+	.footer-content {
+		margin: 0 auto;
+		width: 90%;
+
+		.logo {
+			font-size: 14pt;
+		}
+
+		.menu {
+			list-style: none;
+
+			.menu-item {
+                display: inline-block;
+				margin-right: 32px;
+
+				.menu-link {
+					text-transform: uppercase;
+					letter-spacing: 2px;
+                    font-size: 11pt;
+                    font-weight: 400;
+					padding-bottom: 6px;
+                    
+                    .menu-icon {
+                        position: relative;
+                        width: 22px;
+                        height: 22px;
+                        top: 1px;
+                        margin-right: 6px;
+                    }
+				}
+			}
+		}
+	}
+}

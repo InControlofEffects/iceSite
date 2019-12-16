@@ -1,0 +1,207 @@
+.grid {
+	display: block;
+	padding: 16px 0;
+
+	/* define styles for child elements here (for mobile devices) */
+	.grid-item-left,
+	.grid-item-center,
+	.grid-item-right,
+	.grid-item-inner-left,
+	.grid-item-inner-right,
+	.grid-item-outer-left,
+	.grid-item-outer-right {
+		margin-bottom: 32px;
+	}
+
+	/* define styles for if figures are used inside grid items */
+	.grid-item-left,
+	.grid-item-center,
+	.grid-item-right,
+	.grid-item-inner-left,
+	.grid-item-inner-right,
+	.grid-item-outer-left,
+	.grid-item-outer-right {
+		.grid-figure {
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+	}
+}
+
+@media screen and (min-width: 972px) {
+	.grid {
+		/* grid layout: 2 columns @ 50% width each */
+		&.grid-50x2-layout {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 1fr 1fr;
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: "left right";
+			grid-column-gap: 32px;
+
+			.grid-item-left {
+				-ms-grid-row: 1;
+				-ms-grid-column: 1;
+				grid-area: left;
+			}
+
+			.grid-item-right {
+				-ms-grid-row: 1;
+				-ms-grid-column: 2;
+				grid-area: right;
+			}
+		}
+
+		/* grid layout: 2 columns @ 40% & 60% */
+		&.grid-40x60-layout {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 40% 60%;
+			grid-template-columns: 40% 60%;
+			grid-template-areas: "left right";
+
+			.grid-item-left {
+				-ms-grid-row: 1;
+				-ms-grid-column: 1;
+				grid-area: left;
+			}
+
+			.grid-item-right {
+				-ms-grid-row: 1;
+				-ms-grid-column: 2;
+				grid-area: right;
+			}
+		}
+
+		/* grid layout: 2 columns @ 60% & 40% */
+		&.grid-60x40-layout {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 60% 40%;
+			grid-template-columns: 60% 40%;
+			grid-template-areas: "left right";
+
+			.grid-item-left {
+				-ms-grid-row: 1;
+				-ms-grid-column: 1;
+				grid-area: left;
+			}
+
+			.grid-item-right {
+				-ms-grid-row: 1;
+				-ms-grid-column: 2;
+				grid-area: right;
+			}
+		}
+
+		/* grid layout: 3 columns @ 33.33% width each*/
+		&.grid-33x3-layout {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 1fr 1fr 1fr;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas: "left middle right";
+			grid-column-gap: 32px;
+
+			.grid-item-left {
+				-ms-grid-row: 1;
+				-ms-grid-column: 1;
+				grid-area: left;
+			}
+
+			.grid-item-middle {
+				-ms-grid-row: 1;
+				-ms-grid-column: 2;
+				grid-area: middle;
+			}
+
+			.grid-item-right {
+				-ms-grid-row: 1;
+				-ms-grid-column: 3;
+				grid-area: right;
+			}
+		}
+
+		/* grid layout: 4 columns @ 25% width each*/
+		&.grid-25x4-layout {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 1fr 1fr 1fr 1fr;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas: "outLeft inLeft inRight outRight";
+			grid-column-gap: 32px;
+
+			.grid-item-outer-left {
+				-ms-grid-row: 1;
+				-ms-grid-column: 1;
+				grid-area: outLeft;
+			}
+			.grid-item-inner-left {
+				-ms-grid-row: 1;
+				-ms-grid-column: 2;
+				grid-area: inLeft;
+			}
+
+			.grid-item-inner-right {
+				-ms-grid-row: 1;
+				-ms-grid-column: 3;
+				grid-area: inRight;
+			}
+
+			.grid-item-outer-right {
+				-ms-grid-row: 1;
+				-ms-grid-column: 4;
+				grid-area: outRight;
+			}
+		}
+
+		/* grid layout: 2 columns @ 20% and 80% width*/
+		&.grid-20x80-layout {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 20% 80%;
+			grid-template-columns: 20% 80%;
+			grid-template-areas: "left right";
+
+			.grid-item-left {
+				-ms-grid-row: 1;
+				-ms-grid-column: 1;
+				grid-area: left;
+			}
+
+			.grid-item-right {
+				-ms-grid-row: 1;
+				-ms-grid-column: 2;
+				grid-area: right;
+			}
+		}
+
+		/* grid layout: 2 columns @ 15% and 85% width*/
+		&.grid-15x85-layout {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 15% 85%;
+			grid-template-columns: 15% 85%;
+			grid-template-areas: "left right";
+
+			.grid-item-left {
+				-ms-grid-row: 1;
+				-ms-grid-column: 1;
+				grid-area: left;
+			}
+
+			.grid-item-right {
+				-ms-grid-row: 1;
+				-ms-grid-column: 2;
+				grid-area: right;
+			}
+		}
+	}
+}
