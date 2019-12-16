@@ -10,7 +10,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React from "react"
-import "../styles/logo.css";
 function logo(props) {
     return (
         <p className="logo">

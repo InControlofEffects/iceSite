@@ -1,0 +1,78 @@
+@import "_variables";
+@import "_base";
+
+// site logo
+.logo {
+	display: inline-block;
+	color: $primary;
+	cursor: default;
+	font-size: 11pt;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+
+	.logo-icon {
+		position: relative;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		top: 4px;
+		margin-right: 6px;
+	}
+}
+
+// illustrations
+.illustrations {
+	margin: 12px;
+	width: 175px;
+	height: 125px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+
+	&.illustration-lg {
+		width: 250px;
+		height: 250px;
+	}
+}
+
+#howto {
+	.instructions-list {
+		.figure {
+			* {
+				padding: 0 12px;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			figcaption {
+				font-weight: bold;
+				font-size: 14pt;
+			}
+
+			p {
+				font-size: 14pt;
+			}
+
+			svg {
+				display: block;
+				margin: 0 auto;
+				margin-bottom: 12px;
+			}
+		}
+	}
+}
+
+#start {
+	background-color: $light;
+	text-align: center;
+
+	.btn {
+		margin: auto;
+	}
+}
+
+// #about, #project-background, #accessing-the-app, #using-the-app {
+// 	background-color: $light;
+// }

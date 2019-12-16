@@ -1,0 +1,36 @@
+@import "_variables";
+.main {
+    margin-top: 71px;
+
+    .section {
+        padding: 44px 0;
+        counter-reset: questions;
+
+        .section-content {
+            width: 90%;
+            margin: 0 auto;
+
+            strong {
+                color: $dark;
+            }
+
+            ul, ol {
+                margin-bottom: 16px;
+
+                li {
+                    margin-left: 48px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 972px){
+    .main {
+        .section {
+            .section-content {
+                max-width: 972px;
+            }
+        }
+    }
+}

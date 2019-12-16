@@ -30,7 +30,7 @@ class nav extends React.Component {
 
         // add header class if components prop = true
         // this allows us to reuse the the navigation across the site
-        const menuLinkClass = this.props.isHeader ? "header-menu" : '';
+        const menuLinkClass = this.props.isHeader ? "navigation" : '';
 
         // return
         return (

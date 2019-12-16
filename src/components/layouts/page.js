@@ -2,7 +2,7 @@
 // FILE: main.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-12-16
 // PURPOSE: react component for main
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -10,11 +10,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React, { Component } from "react"
-
-// init analytics
 import ReactGA from "react-ga"
 ReactGA.initialize("UA-76117337-8");
 ReactGA.pageview(window.location.pathname);
+import "../styles/_page.scss"
 
 // build component
 class main extends Component {
@@ -60,9 +59,6 @@ class main extends Component {
     __closeMenu(){
         // find button elements + menus
         const btn = document.getElementById("toggle");
-        const first_bar = btn.querySelector(".menu-bar:nth-child(1)");
-        const second_bar = btn.querySelector(".menu-bar:nth-child(2)");
-        const third_bar = btn.querySelector(".menu-bar:nth-child(3)");
         const menu = document.querySelectorAll(".menu");
         let classes, openClass = "expanded";
 
@@ -77,11 +73,7 @@ class main extends Component {
 
                 // close menu
                 m.classList.remove(openClass);
-
-                // close button
-                first_bar.classList.remove("hidden");
-                second_bar.classList.remove("topBar");
-                third_bar.classList.remove("bottomBar");
+                btn.classList.remove("open");
             }
         });
     }

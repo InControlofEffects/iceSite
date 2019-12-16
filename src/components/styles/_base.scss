@@ -1,0 +1,210 @@
+@import "_variables";
+
+html, body {
+	font-family: "Helvetica", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	font-size: 16pt;
+	margin: 0;
+	padding: 0;
+}
+
+main, nav, header, footer, section, figure {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+	color: $dark;
+	line-height: $line-height-heading;
+	padding: 0;
+	margin: 0;
+	margin-top: 16px;
+	margin-bottom: 6px;
+}
+
+p, li, figcaption {
+	color: $text;
+	line-height: $line-height-default;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	margin-bottom: 16px;
+}
+
+a {
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+	border-bottom: 3px solid transparent;
+	color: $primary;
+	cursor: pointer;
+
+	&:focus,
+	&:hover {
+		border-bottom-color: $primary;
+	}
+}
+
+ul, ol {
+	padding: 0;
+	margin: 0;
+
+	li {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+svg, img {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+}
+
+blockquote {
+	position: relative;
+	margin: 16px 0;
+	padding: 12px;
+	line-height: 1.4;
+	color: $text;
+	border-left-width: 36px;
+	border-left-style: solid;
+	border-left-color: transparent;
+	font-size: 14pt;
+	font-weight: 600;
+
+	&::before {
+		content: "!";
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 36px;
+		height: 100%;
+		top: 0;
+		left: -36px;
+		text-align: center;
+		font-weight: 600;
+		font-size: 28pt;
+	}
+
+	&.warning {
+		background-color: $warning-light;
+
+		&::before {
+			background-color: $warning;
+		}
+	}
+}
+
+.screen-reader-text {
+	position: absolute;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;
+	height: 1px;
+    width: 1px;
+    white-space: nowrap;
+}
+
+/* buttons */
+.btn {
+	display: block;
+	position: relative;
+	margin: 12px 0;
+	padding: 8px 16px;
+	background-clip: border-box;
+	background-color: transparent;
+	border: 2px solid transparent;
+	font-size: 12pt;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	text-align: center;
+	width: 200px;
+	border-radius: 4px;
+	cursor: pointer;
+
+	.btn-icon,
+	.btn-label {
+		cursor: pointer;
+	}
+
+	.btn-icon {
+		position: relative;
+		display: inline-block;
+		right: -2px;
+		top: 6px;
+		width: 25px;
+		height: 25px;
+		margin-right: 12px;
+		text-align: center;
+		line-height: 1.4;
+		border-radius: 50%;
+
+		&.rotated {
+			transform: rotate(45deg);
+		}
+	}
+
+	&.btn-primary {
+		background-color: $primary;
+		color: white;
+
+		&:hover,
+		&:focus {
+			background-color: white;
+			color: $primary;
+			border-color: $primary;
+		}
+	}
+
+	&.btn-secondary {
+		background-color: transparent;
+		color: $primary;
+	}
+
+	&.btn-outlined {
+		background-color: transparent;
+		border-color: $primary;
+		color: $primary;
+
+		&:hover,
+		&:focus {
+			background-color: hsl(231, 41%, 47%);
+			color: white;
+		}
+	}
+
+	&.btn-outlined-alt {
+		border-color: white;
+		color: white;
+
+		&:hover,
+		&:focus {
+			background-color: hsl(231, 41%, 47%);
+			border-color: hsl(231, 41%, 47%);
+			color: white;
+		}
+	}
+
+	&.btn-plain {
+		background-color: transparent;
+		color: $dark;
+
+		&:hover {
+			border-bottom-color: $dark;
+		}
+	}
+
+	&.btn-plain .btn-icon,
+	&.btn-outlined .btn-icon {
+		fill: currentColor;
+	}
+}
+
+.text-align-center {
+	text-align: center;
+}

@@ -11,7 +11,7 @@
 // BEGIN
 import React from "react"
 import Nav from "./nav"
-import "../styles/footer.css"
+import "../styles/_footer.scss"
 import Logo from "../images/Logo"
 
 // define

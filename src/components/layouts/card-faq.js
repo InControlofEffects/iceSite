@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////
-// FILE: report-faq-section.js
+// FILE: card-faq.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-05-14
-// MODIFIED: 2019-06-06
+// MODIFIED: 2019-12-16
 // PURPOSE: react component for generated faq sections
 // DEPENDENCIES: see below
 // STATUS: working; complete
@@ -10,10 +10,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import ReactMarkdown from "react-markdown"
-
-// build component
-class FaqCard extends Component {
+import "../styles/_faq.scss"
+class Card extends Component {
 
     constructor(props) {
         super(props);
@@ -44,11 +44,13 @@ class FaqCard extends Component {
 
     // render
     render() {
+        const id = this.props.id
         return (
-            <section id={this.props.id} className="faq-section searchable" aria-label={this.props.description}>
-                <h3>{this.props.title}</h3>
+            <div id={id} className="section-faq" aria-labelledby={`${id}-title`}>
+                <h3 id={`${id}-title`}>{this.props.title}</h3>
                 <button className="btn expand-toggle" aria-expanded="false" aria-label="open or close section" onClick={this.toggleContent}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon-chevron" width="25" height="15" viewBox="0 0 25 15">
+                        <title>expand definition</title>
                         <path stroke="currentColor" strokeLinecap="round" strokeWidth="2px" fill="currentColor" d="M0,2 12.5,15 25,2 Z" />
                     </svg>
                 </button>
@@ -63,14 +65,20 @@ class FaqCard extends Component {
                     )
                     : (
                         <div className="hidden-content" hidden>
-                        <ReactMarkdown source={this.props.content} escapeHtml={false} />
+                            <ReactMarkdown source={this.props.content} escapeHtml={false} />
                         </div>
                     )
                 }
-            </section>
+            </div>
         )
     }
 }
 
+// Prop types
+Card.propTypes = {
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+}
+
 // export
-export default FaqCard 
+export default Card 

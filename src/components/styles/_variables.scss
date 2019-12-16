@@ -1,0 +1,23 @@
+
+// COLORS
+$primary: hsl(231, 41%, 47%);
+$primary-light: hsla(231, 41%, 47%, 0.2);
+$warning: hsla(53, 100%, 61%, 1);
+$warning-light: hsla(53, 100%, 61%, 0.2);
+$light: #f6f6f6;
+$semi-light: #f5f8fc;
+$text: #3f454b;
+$dark: #252525;
+$dark-alt: #191847;
+$shadow: hsla(0, 0%, 0%, 0.18);
+// END COLORS
+
+// shadow
+$box-shadow: 0 0 6px 2px $shadow;
+
+// other params
+$max-width: 972px;
+$letter-spacing: 2px;
+$line-height-min: 1.1;
+$line-height-heading: 1.4;
+$line-height-default: 1.7;

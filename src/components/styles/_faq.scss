@@ -1,0 +1,97 @@
+@import "_variables";
+.section-faq {
+	display: block;
+	position: relative;
+	width: 80%;
+	border-radius: 6px;
+	padding: 32px 24px;
+	margin: 0 auto;
+	margin-top: 32px;
+	background-color: white;
+	-webkit-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+
+	h3 {
+        display: block;
+		width: 80%;
+		line-height: 1.6;
+		margin: 0;
+		padding: 0;
+        counter-increment: questions;
+
+		&::before {
+			content: counter(questions) ". ";
+		}
+	}
+
+	.expand-toggle {
+		position: absolute;
+		top: 28px;
+		right: 35px;
+		color: #3f454b;
+		cursor: pointer;
+		outline: none;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background-color: transparent;
+		padding: 0;
+		padding-top: 2px;
+		-webkit-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+
+		.icon-chevron {
+			width: 12px;
+			height: 12px;
+		}
+
+		&.rotated {
+			color: #3f454b;
+			background-color: transparent;
+			-webkit-transform: rotate(-180deg);
+			-ms-transform: rotate(-180deg);
+			transform: rotate(-180deg);
+		}
+
+		&:hover,
+		&:focus,
+		&.rotated:hover {
+			color: white;
+			background-color: $text;
+		}
+	}
+
+	.hidden-content {
+		width: 92%;
+		margin-left: 0;
+		margin-top: 16px;
+		overflow: hidden;
+		height: auto;
+		-webkit-transform: scaleY(0);
+		-ms-transform: scaleY(0);
+		transform: scaleY(0);
+		-webkit-transform-origin: top;
+		-ms-transform-origin: top;
+		transform-origin: top;
+		-webkit-transition: transform 3s ease-out;
+		-o-transition: transform 3s ease-out;
+		transition: transform 3s ease-out;
+
+		&.showContent {
+			-webkit-transform: scaleY(1);
+			-ms-transform: scaleY(1);
+			transform: scaleY(1);
+			-webkit-transform-origin: top;
+			-ms-transform-origin: top;
+			transform-origin: top;
+		}
+	}
+}
+@media (min-width: 972px){ 
+    .faq-section {
+        .hidden-content {
+		    margin-left: 32px;
+        }
+    }
+}

@@ -2,7 +2,7 @@
 // FILE: header.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-09-25
+// MODIFIED: 2019-12-16
 // PURPOSE: react component for page header
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -11,7 +11,7 @@
 // BEGIN
 import React from "react"
 import Nav from "./nav"
-import "../styles/header.css"
+import "../styles/_nav.scss"
 import Logo from "../images/Logo"
 
 // define header
@@ -29,18 +29,21 @@ class header extends React.Component {
     // css classes
     toggleMenu() {
 
-        // open/close menu
-        const submenu = document.querySelector(".menu.navlinks");
-        submenu.classList.toggle("expanded");
-
-        // transform icon
-        const btn = document.getElementById("toggle");
-        const first_bar = btn.querySelector(".menu-bar:nth-child(1)");
-        const second_bar = btn.querySelector(".menu-bar:nth-child(2)");
-        const third_bar = btn.querySelector(".menu-bar:nth-child(3)");
-        first_bar.classList.toggle("hidden");
-        second_bar.classList.toggle("topBar");
-        third_bar.classList.toggle("bottomBar");
+        // toggle sidebar and toggle button classes
+        const toggle = document.getElementById("menuBtn");
+        const menu = document.querySelector(".menu.navlinks");
+        toggle.classList.toggle("open");
+        
+        // update aria attributes
+        if (toggle.getAttribute("aria-expanded") === "false") {
+            toggle.setAttribute("aria-expanded", true);
+            menu.setAttribute("hidden", false);
+            menu.classList.add("expanded");
+        } else {
+            toggle.setAttribute("aria-expanded", false);
+            menu.setAttribute("hidden", true);
+            menu.classList.remove("expanded");
+        }
 
     }
 
@@ -59,7 +62,7 @@ class header extends React.Component {
                 <Nav isHeader={true}/>
                 <ul className="menu menubtns" aria-label="open and close menu">
                     <li className="menu-item menu-toggle">
-                        <button id="toggle" className="btn" onClick={this.toggleMenu} aria-label="open and close menu">
+                        <button id="menuBtn" className="btn" onClick={this.toggleMenu} aria-label="open and close menu" aria-expanded="false">
                             <span className="menu-icon">
                                 <span className="menu-bar"></span>
                                 <span className="menu-bar"></span>
