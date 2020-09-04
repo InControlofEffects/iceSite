@@ -1,12 +1,14 @@
 {
-  "name": "ice-site",
-  "version": "1.0.0",
-  "description": "static site for web app",
+  "name": "iceSite",
+  "version": "0.0.1",
+  "description": "Static site for the In Control of Effects project",
   "main": "index.js",
+  "author": "davidruvolo51",
+  "license": "MIT",
   "dependencies": {
     "async_hooks": "^1.0.0",
     "babel-loader": "^8.0.6",
-    "cssnano": "^4.1.10",
+    "heroicons": "^0.4.2",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -15,37 +17,27 @@
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.4",
-    "sass": "^1.23.7"
+    "parcel": "1.12.4",
+    "@babel/core": "^7.10.3",
+    "@babel/cli": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "babel-preset-minify": "^0.5.1",
+    "sass": "^1.26.8",
+    "postcss-modules": "^2.0.0",
+    "autoprefixer": "^9.8.2",
+    "cssnano": "^4.1.10"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development parcel src/index.html",
     "build": "NODE_ENV=production parcel build src/index.html --public-url ./ --out-dir public",
     "clean": "rm -rf dist .cache public"
   },
-  "postcss": {
-    "modules": false,
-    "plugins": {
-      "autoprefixer": {
-        "overrideBrowserslist": [
-          ">1%",
-          "last 4 versions",
-          "Firefox ESR",
-          "not ie < 9"
-        ],
-        "flexbox": "no-2009"
-      }
-    }
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidruvolo51/ice-site.git"
+    "url": "git+https://github.com/davidruvolo51/iceSite.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/davidruvolo51/ice-site/issues"
+    "url": "https://github.com/davidruvolo51/iceSite/issues"
   },
-  "homepage": "https://github.com/davidruvolo51/ice-site#readme"
+  "homepage": "https://github.com/davidruvolo51/iceSite#readme"
 }
