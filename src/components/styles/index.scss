@@ -1,10 +1,10 @@
-@import "_variables";
-@import "_base", "_nav", "_footer";
+@import "_variables", "_palette_3";
+@import "_base", "_flex", "_grid", "_nav", "_footer", "_page", "_header", "_faq";
 
 // site logo
 .logo {
 	display: inline-block;
-	color: $primary;
+	color: $purple-800;
 	cursor: default;
 	font-size: 11pt;
 	font-weight: 600;
@@ -18,6 +18,15 @@
 		height: 20px;
 		top: 4px;
 		margin-right: 6px;
+
+		circle {
+			&:nth-child(1) {
+				fill: $purple-800;
+			}
+			&:nth-child(2) {
+				fill: $purple-100;
+			}
+		}
 	}
 }
 
@@ -35,6 +44,39 @@
 		width: 250px;
 		height: 250px;
 	}
+}
+
+#home-hero {
+	background-color: $purple-900;
+
+	h1, h2 {
+		color: $blue-grey-050;
+	}
+
+	&::before, &::after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 250%;
+		height: 400px;
+		bottom: 0;
+		border-radius: 35% 17.5%;
+		z-index: 0;
+	}
+
+	&::before {
+		right: 10%;
+		background: $purple-500;
+		transform: rotate(13deg);
+	}
+
+	&::after {
+		left: 10%;
+		background: $purple-300;
+		transform: rotate(-13deg);
+	}
+
+
 }
 
 #howto {
@@ -72,7 +114,3 @@
 		margin: auto;
 	}
 }
-
-// #about, #project-background, #accessing-the-app, #using-the-app {
-// 	background-color: $light;
-// }
