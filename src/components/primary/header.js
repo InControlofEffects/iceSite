@@ -41,7 +41,7 @@ function Header(props) {
                 <li className="menu-item menu-toggle">
                     <button
                         id="menuBtn"
-                        className="btn"
+                        className={`btn ${props.value ? "open" : ""}`}
                         onClick={handleOpenStatus}
                         value={props.value}
                         aria-expanded={props.value}
