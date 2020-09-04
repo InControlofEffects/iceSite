@@ -1,10 +1,8 @@
-@import "_variables";
-.main {
-    margin-top: 71px;
+.page {
+    margin-top: 32px;
 
     .section {
         padding: 44px 0;
-        counter-reset: questions;
 
         .section-content {
             width: 90%;
@@ -26,7 +24,7 @@
 }
 
 @media (min-width: 972px){
-    .main {
+    .page {
         .section {
             .section-content {
                 max-width: 972px;
