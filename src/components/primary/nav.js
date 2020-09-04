@@ -2,67 +2,53 @@
 // FILE: nav.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-11-14
-// PURPOSE: react component for site header
-// DEPENDENCIES: see below
-// STATUS: in.progress
-// COMMENTS: NA
+// MODIFIED: 2020-09-04
+// PURPOSE: Generate list of navigation links
+// DEPENDENCIES: React, Link
+// STATUS: working
+// COMMENTS: This component generates a list of navigation links for the
+// site. Data must be in json format (see nav.json file). Data should be
+// passed down from parent component.
+//
+// ARGUMENTS
+// @param isHeader if TRUE, will add the css class "navigation" to list
+// @param linksData an object containing the site's paths and names
+// @param state a state var that determines of the menu is open or closed
+//
+// STRUCTURE
+// json file should be structured in the following way
+// {
+//   "links": [
+//      {"name" : "About", "path": "about/"}
+//      ...
+//   ]
+// }
+//
+// This component is used in the footer.js and header.js components
 ////////////////////////////////////////////////////////////////////////////////
 // BEGIN
 import React from "react"
 import { Link } from "react-router-dom"
-import navlinks from "../nav.json"
-
-// build component
-class nav extends React.Component {
-
-    // constructor
-    constructor(props) {
-        super(props);
-        this.state = { data: navlinks }
-    }
-
-    // render
-    render() {
-
-        // pull data from state dataset
-        const data = this.state.data.links;
-
-        // add header class if components prop = true
-        // this allows us to reuse the the navigation across the site
-        const menuLinkClass = this.props.isHeader ? "navigation" : '';
-
-        // return
-        return (
-            <ul className={`menu navlinks ${menuLinkClass}`} aria-label="site navigation">
-                {
-                    // map navigation links to li and sub ui/li elements
-                    data.map((parent, i) => (
-
-                        // map parent links
+function Nav(props) {
+    return (
+        <ul
+            className={`menu navlinks ${props.isHeader ? "navigation" : ""} ${props.state ? "expanded" : ""}`}
+        >
+            {
+                props.linksData.links.map((parent, i) => {
+                    return (
                         <li className={`menu-item ${parent.name.toLowerCase()}-item`} key={i}>
-                            <Link className="menu-link" to={parent.path} data-live-page={parent.name.toLowerCase()}>
-                                {/* {
-                                    // add condition for if the name is home
-                                    parent.name.toLowerCase() === "home"
-                                        ? <HomeIcon className="menu-icon icon-home" />
-                                        : null
-                                } */}
+                            <Link className="menu-link" to={parent.path}>
                                 {
-                                    // print the name of the link
                                     parent.name
-
-                                    // if there are children links to be added,
-                                    // you must add them as a submenu. See
-                                    // rrads-site-react project for code
-                                    // and implementation
                                 }
                             </Link>
                         </li>
-                    ))
-                }
-            </ul>
-        )
-    }
+                    )
+                })
+            }
+        </ul>
+    )
 }
-export default nav
+
+export default Nav
