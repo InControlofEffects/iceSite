@@ -28,19 +28,23 @@ import "./styles/index.scss"
 import navdata from "./nav.json"
 
 // import hooks
-// import useWindowSize from "./hooks/useWindowSize"
+import useWindowSize from "./hooks/useWindowSize"
 
 // build app
 function App(props) {
 
     // set window size and menu toggle
     const [isOpen, setOpenStatus] = useState(false);
-    // const windowSize = useWindowSize();
+    const windowSize = useWindowSize();
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "visible";
+        }
+
+        if (isOpen && windowSize.width >= 862) {
+            setOpenStatus(false)
         }
     })
 
@@ -59,6 +63,8 @@ function App(props) {
             />
             <Switch>
                 <Route exact path="/" component={Home} />
+                <Route path="/faq" component={Faq} />
+                <Route path="/start" component={Start} />
                 <Route component={errorPage} />
             </Switch>
             <Footer linksData={navdata} />

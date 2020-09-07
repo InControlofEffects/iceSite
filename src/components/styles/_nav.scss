@@ -9,6 +9,7 @@
 	top: 0;
 	z-index: 999;
 	background-color: #ffffff;
+	box-shadow: $shadow;
 
 	/* set branding element + logo */
 	.logo {
@@ -33,7 +34,7 @@
 			margin-bottom: 24px;
 
 			.menu-link {
-				color: $purple-800;
+				color: $purple-900;
 				font-weight: 600;
 				text-transform: uppercase;
 				letter-spacing: 2px;
@@ -63,7 +64,7 @@
 			position: relative;
 			padding: 0;
 			margin: 0;
-			color: $text;
+			color: $blue-grey-700;
 
 			.menu-link {
 				padding: 0;
@@ -91,7 +92,7 @@
 			width: 30px;
 			border-radius: 6px;
 			margin-bottom: 6px;
-			background-color: $purple-800;
+			background-color: $purple-900;
 			transition: all 0.2s ease-in-out;
 
 			&:nth-child(1) {
@@ -108,20 +109,19 @@
 		.menu-bar:nth-child(2) {
 			transform: rotate(-45deg);
 			transform-origin: center 0.5px;
-			background-color: $primary;
+			background-color: $purple-900;
 		}
 
 		.menu-bar:nth-child(3) {
 			transform: rotate(45deg);
 			transform-origin: 24.85px -2.5px;
-			background-color: $purple-800;
+			background-color: $purple-900;
 		}
 	}
 }
 
 @media screen and (min-width: 862px) {
 	.navbar {
-		// padding: 0;
 
 		.logo {
 			margin-right: 32px;
@@ -145,12 +145,12 @@
 					text-transform: uppercase;
 					letter-spacing: 2px;
 					font-weight: 600;
-					color: $purple-800;
+					color: $purple-900;
 					border-bottom: 2px solid transparent;
 
 					&:hover,
 					&:focus {
-						border-bottom-color: $purple-800;
+						border-bottom-color: currentColor;
 					}
 				}
 			}

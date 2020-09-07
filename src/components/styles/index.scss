@@ -1,10 +1,61 @@
-@import "_variables", "_palette_3";
-@import "_base", "_flex", "_grid", "_nav", "_footer", "_page", "_header", "_faq";
+// global variables
+$shadow: hsla(0, 0%, 0%, 0.4);
+$box-shadow: 0 0 6px 2px $shadow;
+$max-width: 972px;
+$letter-spacing: 2px;
+$line-height-min: 1.1;
+$line-height-heading: 1.4;
+$line-height-default: 1.7;
+
+// import color palette #3 from tailwind
+@import "_palette_3";
+
+// load modules
+@import "_base", "_nav", "_footer", "_page", "_header", "_accordion";
+
+
+// define visually hidden style
+.screen-reader-text {
+	position: absolute;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	white-space: nowrap;
+}
+
+.btn-link {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	padding: 12px 32px;
+	color: currentColor;
+	border: 2px solid currentColor;
+	width: 125px;
+	box-shadow: none;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	font-size: 11pt;
+
+	&.link-primary {
+		color: $purple-900;
+		border-color: $purple-900;
+	}
+
+	&:hover, &:focus {
+		box-shadow: 0 0 4px 2px $purple-400;
+		text-decoration: underline;
+	}
+}
 
 // site logo
 .logo {
 	display: inline-block;
-	color: $purple-800;
+	color: $purple-900;
 	cursor: default;
 	font-size: 11pt;
 	font-weight: 600;
@@ -21,8 +72,9 @@
 
 		circle {
 			&:nth-child(1) {
-				fill: $purple-800;
+				fill: $purple-900;
 			}
+
 			&:nth-child(2) {
 				fill: $purple-100;
 			}
@@ -30,87 +82,89 @@
 	}
 }
 
-// illustrations
-.illustrations {
-	margin: 12px;
-	width: 175px;
-	height: 125px;
+#home-hero {
+	background-position: 90% 65%;
+
+	@media screen and (min-width: $max-width) {
+		height: 72vh;
+	}
+}
+
+.link-boxes {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	margin: 0 auto;
+	align-content: center;
+	flex-direction: column;
+	text-align: center;
+	height: 300px;
 
-	&.illustration-lg {
-		width: 250px;
-		height: 250px;
-	}
-}
+	.link-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
 
-#home-hero {
-	background-color: $purple-900;
+		.link {
+			border: 2px solid currentColor;
+			padding: 12px 32px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-weight: bold;
+			font-size: 11pt;
 
-	h1, h2 {
-		color: $blue-grey-050;
-	}
-
-	&::before, &::after {
-		content: "";
-		display: block;
-		position: absolute;
-		width: 250%;
-		height: 400px;
-		bottom: 0;
-		border-radius: 35% 17.5%;
-		z-index: 0;
-	}
-
-	&::before {
-		right: 10%;
-		background: $purple-500;
-		transform: rotate(13deg);
-	}
-
-	&::after {
-		left: 10%;
-		background: $purple-300;
-		transform: rotate(-13deg);
-	}
-
-
-}
-
-#howto {
-	.instructions-list {
-		.figure {
-			* {
-				padding: 0 12px;
-				margin: 0 auto;
-				text-align: center;
-			}
-
-			figcaption {
-				font-weight: bold;
-				font-size: 14pt;
-			}
-
-			p {
-				font-size: 14pt;
-			}
-
-			svg {
-				display: block;
-				margin: 0 auto;
-				margin-bottom: 12px;
+			&:hover,
+			&:focus {
+				text-decoration: underline;
 			}
 		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 0;
+		}
+	}
+
+	.link-box-info {
+		background-color: $purple-100;
+
+		.link {
+			color: $purple-900;
+			z-index: 1;
+		}
+	}
+
+	.link-box-start {
+		a {
+			color: $purple-050;
+			z-index: 1;
+		}
+
+		&::after {
+			background: $purple-900;
+			opacity: 0.45;
+		}
+	}
+
+	@media screen and (min-width: $max-width) {
+		flex-direction: row;
 	}
 }
 
-#start {
-	background-color: $light;
-	text-align: center;
+#get-started-link {
+	background-position: 50% 25%;
+}
 
-	.btn {
-		margin: auto;
-	}
+
+#learn-more-link {
+	background-position: 50% 50%;
 }

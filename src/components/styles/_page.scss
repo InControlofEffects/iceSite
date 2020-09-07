@@ -1,29 +1,75 @@
 .page {
     margin-top: 32px;
+    background-color: $blue-grey-050;
 
     .section {
-        padding: 44px 0;
+        padding: 24px 0;
 
-        .section-content {
-            width: 90%;
-            margin: 0 auto;
+        ul,
+        ol {
+            margin-bottom: 16px;
 
-            strong {
-                color: $dark;
+            li {
+                margin-left: 48px;
+                line-height: $line-height-default;
+                color: $blue-grey-700;
             }
+        }
 
-            ul, ol {
-                margin-bottom: 16px;
+        a:not(.btn-link) {
+            color: currentColor;
+            box-shadow: inset 0 -2px 0 0 currentColor;
+        }
 
-                li {
-                    margin-left: 48px;
+        blockquote {
+            position: relative;
+            margin: 16px 0;
+            padding: 12px;
+            line-height: 1.4;
+            color: $blue-grey-700;
+            border-left-width: 36px;
+            border-left-style: solid;
+            border-left-color: transparent;
+            font-size: 14pt;
+            font-weight: 600;
+        
+            &::before {
+                content: "!";
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 36px;
+                height: 100%;
+                top: 0;
+                left: -36px;
+                text-align: center;
+                font-weight: 600;
+                font-size: 28pt;
+            }
+        
+            &.warning {
+                background-color: $yellow-vivid-200;
+        
+                &::before {
+                    background-color: $yellow-vivid-500;
                 }
             }
+        }
+
+        .section-content {
+            display: block;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        &.section-extra-padding {
+            padding: 64px 0;
         }
     }
 }
 
-@media (min-width: 972px){
+@media (min-width: 972px) {
     .page {
         .section {
             .section-content {
