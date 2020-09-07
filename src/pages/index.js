@@ -5,19 +5,16 @@
 // MODIFIED: 2020-09-07
 // PURPOSE: react component for "home page"
 // DEPENDENCIES: see below
-// STATUS: in.progress
+// STATUS: working
 // COMMENTS: NA
 ////////////////////////////////////////////////////////////////////////////////
-// BEGIN
 import React from "react"
 import { Link } from "react-router-dom"
-
 import ConversationPhoto from "../components/images/christina-wocintechchat-com-rCyiK4_aaWw-unsplash.jpg"
 import MobilePhonePhoto from "../components/images/yura-fresh-xezXEh_fIeU-unsplash.jpg"
 
 // define home page
 function home() {
-    document.title = "In Control of Effects | Home"
     return (
         <main id="main" className="page home-page">
             <header id="home-hero" className="header header-photo" style={{backgroundImage: `url(${ConversationPhoto})`}}>
@@ -34,12 +31,12 @@ function home() {
             </section>
             <section className="link-boxes">
                 <div id="learn-more-link" className="link-box link-box-info">
-                    <Link to="/faq" className="link">
+                    <Link to="/faq" className="link" onClick={() => window.scrollTo(0, 0)}>
                         Learn More
                     </Link>
                 </div>
                 <div id="get-started-link" className="link-box link-box-start" style={{backgroundImage : `url(${MobilePhonePhoto})`}}>
-                    <Link to="/start" className="link">
+                    <Link to="/start" className="link" onClick={() => window.scrollTo(0, 0)}>
                         Get Started
                     </Link>
                 </div>

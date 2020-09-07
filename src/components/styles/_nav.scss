@@ -42,6 +42,10 @@
 				border-bottom: 2px solid transparent;
 				font-size: 21pt;
 				text-decoration: none;
+
+				&.selected {
+					border-bottom-color: $purple-900;
+				}
 			}
 		}
 

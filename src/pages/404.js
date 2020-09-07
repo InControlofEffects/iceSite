@@ -10,7 +10,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 import React from "react"
 function errorPage() {
-    document.title = "In Control of Effects | Error: Page Not Found"
     return (
         <main id="main" className="page error_page">
             <header className="header">

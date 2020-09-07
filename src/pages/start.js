@@ -15,7 +15,6 @@ import MobilePhonePhoto from "../components/images/yura-fresh-xezXEh_fIeU-unspla
 
 // build page
 function start() {
-    document.title = "In Control of Effects | Get Started"
     return (
         <main id="main" className="page start-page">
             <header id="start-hero" className="header header-photo" style={{ backgroundImage: `url(${MobilePhonePhoto})` }}>

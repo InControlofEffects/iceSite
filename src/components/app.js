@@ -46,6 +46,10 @@ function App(props) {
         if (isOpen && windowSize.width >= 862) {
             setOpenStatus(false)
         }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            document.querySelector(".navigation a[data-page-name='Home']").classList.add("selected")
+        }, {once: true})
     })
 
     function handleOpenStatus (value) {

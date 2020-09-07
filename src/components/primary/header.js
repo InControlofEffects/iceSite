@@ -36,6 +36,7 @@ function Header(props) {
                 isHeader={true}
                 linksData={props.linksData}
                 state={props.value}
+                onChange={handleOpenStatus}
             />
             <ul className="menu menubtns">
                 <li className="menu-item menu-toggle">

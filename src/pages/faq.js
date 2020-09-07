@@ -16,7 +16,6 @@ import ComputerSearchPhoto from "../components/images/glenn-carstens-peters-npxX
 
 // define page
 function FAQ() {
-    document.title = "In Control of Effects | Accordion"
     return (
         <main id="main" className="page Accordion-page">
             <header id="Accordion-hero" className="header header-photo" style={{backgroundImage: `url(${ComputerSearchPhoto})`}}>

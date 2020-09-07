@@ -2,7 +2,7 @@
 // FILE: nav.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2020-09-04
+// MODIFIED: 2020-09-07
 // PURPOSE: Generate list of navigation links
 // DEPENDENCIES: React, Link
 // STATUS: working
@@ -29,7 +29,50 @@
 // BEGIN
 import React from "react"
 import { Link } from "react-router-dom"
+
+
+// Subcomponent for navigation link
+function NavLink(props) {
+
+    function handleOpenStatus(value) {
+        props.onChange(value)
+    }
+    
+
+    // onClick for navlinks
+    function handleClick(e) {
+
+        // reset scroll
+        window.scrollTo(0, 0);
+
+        // update document title
+        document.title = `In Control of Effects | ${e.target.text}`
+
+        // add link highlighting
+        if (props.isHeader) {
+            document.querySelectorAll(".navigation a").forEach((li) => li.classList.remove("selected"));
+            e.target.classList.add("selected");
+        }
+
+        // close menu if open
+        if (props.isHeader && props.isOpen) {
+            handleOpenStatus(false)
+        }
+    }
+
+    return (
+        <Link className="menu-link" to={props.path} data-page-name={props.name} onClick={handleClick}>
+            {props.name}
+        </Link>
+    )
+}
+
 function Nav(props) {
+
+    function handleOpenStatus(value) {
+        props.onChange(value)
+    }
+
     return (
         <ul
             className={`menu navlinks ${props.isHeader ? "navigation" : ""} ${props.state ? "expanded" : ""}`}
@@ -38,11 +81,7 @@ function Nav(props) {
                 props.linksData.links.map((parent, i) => {
                     return (
                         <li className={`menu-item ${parent.name.toLowerCase()}-item`} key={i}>
-                            <Link className="menu-link" to={parent.path}>
-                                {
-                                    parent.name
-                                }
-                            </Link>
+                            <NavLink path={parent.path} name={parent.name} isHeader={props.isHeader} onChange={handleOpenStatus} isOpen={props.state}/>
                         </li>
                     )
                 })
