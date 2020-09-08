@@ -48,7 +48,8 @@ function App(props) {
         }
 
         window.addEventListener("DOMContentLoaded", () => {
-            document.querySelector(".navigation a[data-page-name='Home']").classList.add("selected")
+            const livepage = document.querySelector(`.navigation a[href='${document.location.pathname}'`)
+            livepage.classList.add("selected");
         }, {once: true})
     })
 

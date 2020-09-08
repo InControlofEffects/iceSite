@@ -109,13 +109,14 @@ $line-height-default: 1.7;
 		background-repeat: no-repeat;
 		background-position: center;
 
-		.link {
+		a {
 			border: 2px solid currentColor;
 			padding: 12px 32px;
 			text-transform: uppercase;
 			letter-spacing: 2px;
 			font-weight: bold;
 			font-size: 11pt;
+			text-decoration: none;
 
 			&:hover,
 			&:focus {
@@ -137,7 +138,7 @@ $line-height-default: 1.7;
 	.link-box-info {
 		background-color: $purple-100;
 
-		.link {
+		a {
 			color: $purple-900;
 			z-index: 1;
 		}

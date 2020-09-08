@@ -1,0 +1,98 @@
+// accordion component
+.accordion {
+	font-family: inherit;
+	background-color: #fff;
+	box-sizing: border-box;
+	color: inherit;
+	padding: 16px;
+	margin: 24px 0;
+	border: 3px solid transparent;
+	border-radius: 6px;
+	width: 80%;
+
+	&:focus-within {
+		box-shadow: 0 0 4px 2px $purple-600;
+	}
+
+	// accordion heading styles (includes button)
+	.accordion__heading {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		font-family: inherit;
+		font-size: 100%;
+		word-break: break-word;
+	}
+
+	// reset button styles
+	.accordion__toggle {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		border: none;
+		position: relative;
+		background: none;
+		width: 100%;
+		background-color: none;
+		outline: none;
+		margin: 0;
+		padding: 0;
+		cursor: pointer;
+		font-size: inherit;
+		color: currentColor;
+
+		// add spacing to button label (internal text)
+		.toggle__label {
+			display: inline-block;
+			word-break: break-word;
+			width: calc(100% - 24px);
+			text-align: left;
+		}
+
+		// <svg>
+		$icon-size: 26px;
+		.toggle__icon {
+			width: $icon-size;
+			height: $icon-size;
+			transform: rotate(0);
+			transform-origin: center;
+			transition: transform 0.3s ease-in-out;
+
+			// rotate (will be added to element via JS)
+			&.rotated {
+				transform: rotate(180deg);
+			}
+		}
+
+		&:hover, &:focus {
+			.toggle__label{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	// accordion content
+	.accordion__content {
+		margin: 0;
+		padding: 0;
+		padding-top: 12px;
+
+		&.hidden {
+			display: none;
+		}
+	}
+}
+
+// eliminate transition for accessibility support
+@media (prefers-reduced-motion) {
+	.accordion {
+		// enforce instant rotation for button icon
+		.accordion__toggle {
+			.toggle__icon {
+				transition: all 1ms ease-in-out;
+			}
+		}
+	}
+}
