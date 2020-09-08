@@ -28,7 +28,7 @@
     "cssnano": "^4.1.10"
   },
   "scripts": {
-    "start": "NODE_ENV=development parcel src/index.html",
+    "dev": "NODE_ENV=development parcel src/index.html",
     "build": "NODE_ENV=production parcel build src/index.html --public-url ./ --out-dir public",
     "serve": "http-server ./public --port 9000 -o",
     "clean": "rm -rf dist .cache public"
