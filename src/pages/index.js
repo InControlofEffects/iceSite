@@ -9,7 +9,7 @@
 // COMMENTS: NA
 ////////////////////////////////////////////////////////////////////////////////
 import React from "react"
-import { Link } from "react-router-dom"
+import SiteLink from "../components/elements/siteLink"
 import ConversationPhoto from "../components/images/christina-wocintechchat-com-rCyiK4_aaWw-unsplash.jpg"
 import MobilePhonePhoto from "../components/images/yura-fresh-xezXEh_fIeU-unsplash.jpg"
 
@@ -31,14 +31,14 @@ function home() {
             </section>
             <section className="link-boxes">
                 <div id="learn-more-link" className="link-box link-box-info">
-                    <Link to="/faq" className="link" onClick={() => window.scrollTo(0, 0)}>
-                        Learn More
-                    </Link>
+                    <SiteLink path="/faq" name="FAQ">
+                        Learn more
+                    </SiteLink>
                 </div>
                 <div id="get-started-link" className="link-box link-box-start" style={{backgroundImage : `url(${MobilePhonePhoto})`}}>
-                    <Link to="/start" className="link" onClick={() => window.scrollTo(0, 0)}>
+                    <SiteLink path="/start" name="Start">
                         Get Started
-                    </Link>
+                    </SiteLink>
                 </div>
             </section>
         </main>
