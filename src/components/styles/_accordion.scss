@@ -5,13 +5,17 @@
 	box-sizing: border-box;
 	color: inherit;
 	padding: 16px;
-	margin: 24px 0;
+	margin: 24px auto;
 	border: 3px solid transparent;
 	border-radius: 6px;
-	width: 80%;
+	width: 100%;
 
 	&:focus-within {
 		box-shadow: 0 0 4px 2px $purple-600;
+	}
+
+	@media screen and (min-width: $max-width) {
+		width: 80%;
 	}
 
 	// accordion heading styles (includes button)

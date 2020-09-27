@@ -11,8 +11,7 @@
 		list-style: none;
 
 		.menu-item {
-			display: inline-block;
-			margin-right: 32px;
+			display: block;
 
 			.menu-link {
 				text-transform: uppercase;
@@ -27,6 +26,15 @@
 					height: 22px;
 					top: 1px;
 					margin-right: 6px;
+				}
+			}
+
+			@media screen and (min-width: $max-width) {
+				display: inline-block;
+				margin-right: 32px;
+
+				&:last-child {
+					margin-right: 0;
 				}
 			}
 		}
