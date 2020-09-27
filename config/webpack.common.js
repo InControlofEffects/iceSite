@@ -2,7 +2,7 @@
 // FILE: webpack.common.js
 // AUTHOR: David Ruvolo
 // CREATED: 2020-09-26
-// MODIFIED: 2020-09-26
+// MODIFIED: 2020-09-27
 // PURPOSE: configuration to be used in prod and dev
 // DEPENDENCIES: see below
 // STATUS: working
@@ -12,7 +12,7 @@
 // load
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require("webpack");
+// const webpack = require("webpack");
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -20,13 +20,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // configuration
 module.exports = {
-    entry: "./src/index.js",
+    entry: [
+        "@hot-loader/react-dom",
+        "./src/index.js"
+    ],
     output: {
         path: path.resolve(__dirname, "..", "public/"),
         filename: "incontrolofeffects.js",
     },
     plugins: [
-        new webpack.ProgressPlugin(),
+        // new webpack.ProgressPlugin(),
         new CopyWebpackPlugin({
             patterns: [
                 {
@@ -56,7 +59,9 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                use: "babel-loader",
+                use: [
+                    "babel-loader",
+                ],
                 exclude: /node_modules/,
             },
             {

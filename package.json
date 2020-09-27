@@ -8,14 +8,13 @@
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "build": "webpack --env prod",
-    "serve": "http-server ./public --port 9000 -o"
+    "serve": "http-server ./public --port 9000"
   },
   "dependencies": {
     "async_hooks": "^1.0.0",
-    "babel-loader": "^8.0.6",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react-dom": "npm:@hot-loader/react-dom",
     "react-ga": "^2.7.0",
     "react-hot-loader": "^4.13.0",
     "react-router-dom": "^5.1.2"
