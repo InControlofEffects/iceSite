@@ -16,7 +16,7 @@ function Accordion(props) {
     const [isCardOpen, setCardOpen] = useState(false);
     return (
         <div id={props.id} className="accordion" aria-labelledby={`${props.id}-title`}>
-            <h3 id={`${props.id}-title`} className="accordion__heading">
+            <h4 id={`${props.id}-title`} className="accordion__heading">
                 <button
                     onClick={() => setCardOpen(!isCardOpen)}
                     className="accordion__toggle"
@@ -27,7 +27,7 @@ function Accordion(props) {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
-            </h3>
+            </h4>
             <section className={`accordion__content ${!isCardOpen ? "hidden" : ""}`}>
                 {props.children}
             </section>

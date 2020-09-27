@@ -32,9 +32,9 @@ $line-height-default: 1.7;
 	text-align: center;
 	padding: 12px 32px;
 	color: currentColor;
-	border: 2px solid currentColor;
 	width: 125px;
 	box-shadow: none;
+	border: none;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -42,12 +42,12 @@ $line-height-default: 1.7;
 	font-size: 11pt;
 
 	&.link-primary {
-		color: $purple-900;
-		border-color: $purple-900;
+		background-color: $purple-900;
+		color: $purple-050;
 	}
 
 	&:hover, &:focus {
-		box-shadow: 0 0 4px 2px $purple-400;
+		box-shadow: 0 0 4px 3px $purple-400;
 		text-decoration: underline;
 	}
 }
@@ -96,7 +96,7 @@ $line-height-default: 1.7;
 	align-content: center;
 	flex-direction: column;
 	text-align: center;
-	height: 300px;
+	height: 400px;
 
 	.link-box {
 		display: flex;
@@ -158,6 +158,7 @@ $line-height-default: 1.7;
 
 	@media screen and (min-width: $max-width) {
 		flex-direction: row;
+		height: 300px;
 	}
 }
 
@@ -168,4 +169,16 @@ $line-height-default: 1.7;
 
 #learn-more-link {
 	background-position: 50% 50%;
+}
+
+.accordion-section {
+	h3 {
+		text-align: left;
+	}
+
+	@media screen and (min-width: $max-width) {
+		h3 {
+			text-align: center;
+		}
+	}
 }

@@ -29,9 +29,9 @@ function FAQ() {
                     <p>If you additional questions or would like more information, please contact the study coordinator.</p>
                 </div>
             </section>
-            <section className="section" aria-labelledby="about-the-in-control-of-effects-project">
+            <section className="section accordion-section" aria-labelledby="about-the-in-control-of-effects-project">
                 <div className="section-content">
-                    <h2 id="about-the-in-control-of-effects-project">About the In Control of Effects project</h2>
+                    <h3 id="about-the-in-control-of-effects-project">About the In Control of Effects project</h3>
                     <Accordion id="what-is-the-in-control-of-effects-app" title="What is the In Control of Effects App?">
                         <p>The <strong>In Control of Effects</strong> app is an experimental tool designed to increase awareness about antipsychotic medications and the risk of side effects. This may be important if there are side effects that you are unaware of or that you would like to avoid.</p>
                     </Accordion>
@@ -40,9 +40,9 @@ function FAQ() {
                     </Accordion>
                 </div>
             </section>
-            <section className="section" aria-labelledby="accessing-the-app">
+            <section className="section accordion-section" aria-labelledby="accessing-the-app">
                 <div className="section-content">
-                    <h2 id="accessing-the-app">Accessing the In Control of Effects app</h2>
+                    <h3 id="accessing-the-app">Accessing the In Control of Effects app</h3>
                     <Accordion id="how-can-i-access-the-app" title="How can I access the app?">
                         <p>You can use any computer, tablet or smartphone to access the app. You may use any web browser you like. A user account is required to access the app. This information is provided to you by the study coordinator.</p>
                     </Accordion>
@@ -62,9 +62,9 @@ function FAQ() {
                     </Accordion>
                 </div>
             </section>
-            <section className="section" aria-labelledby="using-the-app">
+            <section className="section accordion-section" aria-labelledby="using-the-app">
                 <div className="section-content">
-                    <h2 id="using-the-app">Using the app</h2>
+                    <h3 id="using-the-app">Using the app</h3>
                     <Accordion id="how-do-i-use-the-in-control-of-effects-app" title="How do I use the In Control of Effects app?">
                         <p>When you are signed in to the app, you will be presented with a few instructions pages. These pages will demonstrate how to navigate the app and how to select side effects. The two main functionalities of the app are selecting side effects and reading the results. These are described below.</p>
                         <ul>

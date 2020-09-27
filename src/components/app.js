@@ -2,7 +2,7 @@
 // FILE: app.js
 // AUTHOR: David Ruvolo
 // CREATED: 2019-09-11
-// MODIFIED: 2019-12-13
+// MODIFIED: 2020-09-27
 // PURPOSE: main layout for react application
 // DEPENDENCIES: see below
 // STATUS: in.progress
@@ -12,6 +12,7 @@
 
 import React, { useState, useEffect } from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { hot } from "react-hot-loader/root";
 
 // import parts and pages
 import Header from "./primary/header"
@@ -78,4 +79,4 @@ function App(props) {
 }
 
 // export
-export default App
+export default hot(App)
