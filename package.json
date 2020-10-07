@@ -1,6 +1,6 @@
 {
   "name": "iceSite",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Static site for the In Control of Effects project",
   "main": "index.js",
   "author": "davidruvolo51",
@@ -52,5 +52,5 @@
   "bugs": {
     "url": "https://github.com/davidruvolo51/iceSite/issues"
   },
-  "homepage": "https://github.com/davidruvolo51/iceSite#readme"
+  "homepage": "https://incontrolofeffects.com"
 }
