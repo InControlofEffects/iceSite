@@ -1,3 +1,5 @@
+![the in control of effects project](incontrolofeffects.png)
+
 # In Control of Effects Main Site
 
 This repository contains all of the source code for [www.incontrolofeffects.com](https://www.incontrolofeffects.com).
