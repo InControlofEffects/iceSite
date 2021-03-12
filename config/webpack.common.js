@@ -2,7 +2,7 @@
 // FILE: webpack.common.js
 // AUTHOR: David Ruvolo
 // CREATED: 2020-09-26
-// MODIFIED: 2020-09-27
+// MODIFIED: 2021-03-12
 // PURPOSE: configuration to be used in prod and dev
 // DEPENDENCIES: see below
 // STATUS: working
@@ -26,7 +26,7 @@ module.exports = {
     ],
     output: {
         path: path.resolve(__dirname, "..", "public/"),
-        filename: "incontrolofeffects.js",
+        filename: "incontrolofeffects.[contenthash].js",
     },
     plugins: [
         // new webpack.ProgressPlugin(),
@@ -51,7 +51,7 @@ module.exports = {
             filename: "index.html",
         }),
         new MiniCssExtractPlugin({
-            filename: "incontrolofeffects.css",
+            filename: "incontrolofeffects.[contenthash].css",
         }),
         new CleanWebpackPlugin(),
     ],
