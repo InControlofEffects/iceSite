@@ -2,7 +2,7 @@
 
 # In Control of Effects Main Site
 
-This repository contains all of the source code for [InControlofEffects.github.io/iceSite/](https://InControlofEffects.github.io/iceSite/).
+This repository contains all of the source code for [incontrolofeffects.com](https://www.incontrolofeffects.com/).
 
 ## Development
 
