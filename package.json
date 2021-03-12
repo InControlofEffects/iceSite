@@ -8,7 +8,8 @@
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "build": "webpack --env prod",
-    "serve": "http-server ./public --port 9000"
+    "serve": "http-server ./public --port 9000",
+    "prep": "mv public docs"
   },
   "dependencies": {
     "async_hooks": "^1.0.0",
